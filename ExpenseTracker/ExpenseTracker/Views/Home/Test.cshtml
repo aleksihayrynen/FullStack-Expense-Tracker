@@ -4,6 +4,16 @@
 
 <div class="d-flex justify-content-center align-items-center flex-column" style="height: 60vh;">
     <h1>Test Page</h1>
-    <input type="submit" value="Button" class="btn btn-primary mt-3" />
+    <input type="submit" value="Button" class="btn btn-primary mt-3" onclick="test_function()" />
 </div>
 
+
+@section scripts {
+    <script>
+        async function test_function() {
+            const response = await fetch('/Home/Test_func');
+            const data = await response.json();
+            console.log("Fetched users:", data);
+        }
+    </script>
+}

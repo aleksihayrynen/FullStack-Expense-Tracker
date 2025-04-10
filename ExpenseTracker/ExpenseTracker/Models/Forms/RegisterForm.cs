@@ -20,7 +20,6 @@ namespace ExpenseTracker.Models.Forms
         [DataType(DataType.EmailAddress)]
         public required string email { get; set; }
 
-        public bool Register { get; set; }
 
     }
 }

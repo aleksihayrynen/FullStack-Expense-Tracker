@@ -14,6 +14,5 @@ namespace ExpenseTracker.Models.Forms
         [DataType(DataType.Password)]
         public required string password { get; set; }
 
-        public bool Login { get; set; }
     }
 }
