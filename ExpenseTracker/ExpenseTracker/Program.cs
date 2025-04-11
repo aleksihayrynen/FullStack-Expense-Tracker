@@ -1,9 +1,22 @@
 using ExpenseTracker.Models.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/";
+        options.ExpireTimeSpan = TimeSpan.FromDays(7);
+        options.Cookie.Name = "expense_cookie";
+        options.Cookie.HttpOnly = true;
+        options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+        //options.AccessDeniedPath = "/";  Directing Authenticated users
+    });
 
 var app = builder.Build();
 MongoManipulator.Initialize(builder.Configuration);
@@ -22,6 +35,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

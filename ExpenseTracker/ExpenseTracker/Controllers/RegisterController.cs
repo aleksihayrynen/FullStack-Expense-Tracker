@@ -1,12 +1,19 @@
 ﻿using ExpenseTracker.Models;
 using ExpenseTracker.Models.Forms;
 using ExpenseTracker.Models.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ExpenseTracker.CustomActionFilters;
+using ExpenseTracker.Helper;
+using MongoDB.Driver;
+using System.Security.Cryptography;
 
 namespace ExpenseTracker.Controllers
 {
+    [Unauthenticated]
     public class RegisterController : Controller
     {
+        
         public IActionResult Register()
         {
             return View();
@@ -19,24 +26,32 @@ namespace ExpenseTracker.Controllers
             if (ModelState.IsValid)
             {
                 var userList = await MongoManipulator.GetAllObjects<User>();
-                // Check if username already exists
-                if (userList.Any(u => u.Username == model.name))
+
+                bool usernameTaken = userList.Any(u => u.Username == model.name);
+                bool emailTaken = userList.Any(u => u.Email == model.email);
+
+                if (usernameTaken || emailTaken)
                 {
-                    ModelState.AddModelError("name", "This username is already taken");
-                    if (userList.Any(u => u.Email == model.email)) // Check if email works
-                    {
+                    if (usernameTaken)
+                        ModelState.AddModelError("name", "This username is already taken");
+                    if (emailTaken)
                         ModelState.AddModelError("email", "This email is already registered");
-                        return View(model);
-                    }
+
                     return View(model);
                 }
                 else
                 {
+                    var generatedSalt = new byte[16];  // create empty bytes for the salt
+                    RandomNumberGenerator.Fill(generatedSalt);  // Fill the salt with secure random generator
+
                     var newUser = new User()
                     {
-                        Username = model.name,
-                        Password = model.password,
-                        Email = model.email
+                        Username = model.name.Trim().ToLower(),
+                        Password = Argon2.HashPassword(model.password.Trim().ToLower(), generatedSalt),
+                        Email = model.email.Trim().ToLower(),
+                        IsActive = true,
+                        Salt = generatedSalt
+
                     };
 
                     MongoManipulator.Save(newUser); // Save to DB
@@ -48,6 +63,11 @@ namespace ExpenseTracker.Controllers
             // If validation fails, return the model back to the view
             return View(model);
         }
+        public string check(string param1, string param2)
+        {
+            return "Worked";
+        }
     }
+
 }
 

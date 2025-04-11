@@ -58,15 +58,23 @@ namespace ExpenseTracker.Models.Services
 			}
 		}
 
-		public static T GetObjectById<T>(T entity) where T : DB_SaveableObject
+		public static async Task<T >GetObjectById<T>(T entity) where T : DB_SaveableObject
 		{
 			string collectionName = typeof(T).Name;
 			var collection = GetDB().GetCollection<T>(collectionName);
 			var filter = Builders<T>.Filter.Eq(e => e._id, entity._id);
-            return collection.Find(filter).FirstOrDefault();
+            return await collection.Find(filter).FirstOrDefaultAsync();
 		}
 
-		public static async Task<List<T>> GetAllObjects<T>() where T : DB_SaveableObject
+        public static async Task<T> GetObjectByField<T>(string fieldName, string value) where T : DB_SaveableObject
+        {
+            string collectionName = typeof(T).Name;
+            var collection = GetDB().GetCollection<T>(collectionName);
+            var filter = Builders<T>.Filter.Eq(fieldName, value);
+            return await collection.Find(filter).FirstOrDefaultAsync();
+        }
+
+        public static async Task<List<T>> GetAllObjects<T>() where T : DB_SaveableObject
 		{
 			string collectionName = typeof(T).Name;
 			var collection = GetDB().GetCollection<T>(collectionName);

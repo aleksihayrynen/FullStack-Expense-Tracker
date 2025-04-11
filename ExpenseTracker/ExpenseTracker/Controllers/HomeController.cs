@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ExpenseTracker.Models;
 using ExpenseTracker.Models.Services;
+using ExpenseTracker.Helper;
 
 namespace ExpenseTracker.Controllers;
 
@@ -19,15 +20,14 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Test()
+    public IActionResult Test(string password)
     {
         return View();
     }
 
-    public async Task<IActionResult> Test_func()
+    public async Task<IActionResult> Test_func(string password)
     {
-        var users = await MongoManipulator.GetAllObjects<User>();
-        return Json(users);
+        return View();
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

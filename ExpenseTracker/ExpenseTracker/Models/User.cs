@@ -10,5 +10,7 @@ namespace ExpenseTracker.Models
         public string? Email { get; set; }
         
         public required string Password { get; set; }
+        public required bool  IsActive { get; set; }
+        public required byte[] Salt { get; set; }
     }
 }
