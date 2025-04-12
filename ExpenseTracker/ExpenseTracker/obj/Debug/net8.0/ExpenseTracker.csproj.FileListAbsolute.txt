@@ -96,3 +96,5 @@ C:\Users\Aleksi\Documents\FullStack-Joni\FullStack-Expense-Tracker\ExpenseTracke
 C:\Users\Aleksi\Documents\FullStack-Joni\FullStack-Expense-Tracker\ExpenseTracker\ExpenseTracker\obj\Debug\net8.0\ExpenseTracker.pdb
 C:\Users\Aleksi\Documents\FullStack-Joni\FullStack-Expense-Tracker\ExpenseTracker\ExpenseTracker\obj\Debug\net8.0\ExpenseTracker.genruntimeconfig.cache
 C:\Users\Aleksi\Documents\FullStack-Joni\FullStack-Expense-Tracker\ExpenseTracker\ExpenseTracker\obj\Debug\net8.0\ref\ExpenseTracker.dll
+C:\Users\aleks\Documents\Ohjelmointi\FullStack-Joni\FullStack-Expense-Tracker\ExpenseTracker\ExpenseTracker\bin\Debug\net8.0\Konscious.Security.Cryptography.Argon2.dll
+C:\Users\aleks\Documents\Ohjelmointi\FullStack-Joni\FullStack-Expense-Tracker\ExpenseTracker\ExpenseTracker\bin\Debug\net8.0\Konscious.Security.Cryptography.Blake2.dll

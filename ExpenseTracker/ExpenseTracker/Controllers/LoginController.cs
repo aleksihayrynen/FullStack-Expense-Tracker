@@ -7,6 +7,7 @@ using ExpenseTracker.Models;
 using ExpenseTracker.Models.Services;
 using Microsoft.AspNetCore.Authorization;
 using ExpenseTracker.CustomActionFilters;
+using ExpenseTracker.Helper;
 
 namespace ExpenseTracker.Controllers
 {
@@ -25,9 +26,10 @@ namespace ExpenseTracker.Controllers
             {
                 var user = await MongoManipulator.GetObjectByField<User>("Username", model.name);
                 Console.WriteLine(user);
+                Console.WriteLine(user.Salt);
                 if (user != null)
                 {
-                    if (user.Password == model.password)
+                    if(Argon2.VerifyPassword(model.password, user.Password , user.Salt)) 
                     {
                         var claims = new List<Claim>
                         {
