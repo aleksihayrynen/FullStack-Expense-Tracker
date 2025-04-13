@@ -25,9 +25,9 @@ public class HomeController : Controller
         return View();
     }
 
-    public async Task<IActionResult> Test_func(string password)
+    public IActionResult Test_func(string password)
     {
-        return View();
+        return  View();
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

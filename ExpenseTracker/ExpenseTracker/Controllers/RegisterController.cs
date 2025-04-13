@@ -63,10 +63,6 @@ namespace ExpenseTracker.Controllers
             // If validation fails, return the model back to the view
             return View(model);
         }
-        public string check(string param1, string param2)
-        {
-            return "Worked";
-        }
     }
 
 }
