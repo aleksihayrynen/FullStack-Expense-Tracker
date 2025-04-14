@@ -64,7 +64,7 @@ namespace ExpenseTracker.Models.Services
 			var collection = GetDB().GetCollection<T>(collectionName);
 			var filter = Builders<T>.Filter.Eq(e => e._id, entity._id);
             return await collection.Find(filter).FirstOrDefaultAsync();
-		}
+        }
 
         public static async Task<T> GetObjectByField<T>(string fieldName, string value) where T : DB_SaveableObject
         {
@@ -72,6 +72,28 @@ namespace ExpenseTracker.Models.Services
             var collection = GetDB().GetCollection<T>(collectionName);
             var filter = Builders<T>.Filter.Eq(fieldName, value);
             return await collection.Find(filter).FirstOrDefaultAsync();
+        }
+
+        /// <summary>
+        /// Retrieves a list of objects from the database that match the specified filter.
+        /// Example usage:
+        /// <code>
+        /// Filter .Eq for single .And for multiple
+        /// 
+        /// var filter = Builders&lt;Expense&gt;.Filter.And(
+        ///     Builders&lt;Expense&gt;.Filter.Eq("UserId", userId),
+        ///     Builders&lt;Expense&gt;.Filter.Gte("Date", startDate),
+        ///     Builders&lt;Expense&gt;.Filter.Lte("Date", endDate)
+        /// );
+        /// return await MongoManipulator.GetAllObjectsByFilter(filter);
+        /// </code>
+        /// </summary>
+        /// <returns>A list of objects matching the filter.</returns>
+        public static async Task<List<T>> GetAllObjectsByFilter<T>(FilterDefinition<T> filter) where T : DB_SaveableObject
+        {
+            string collectionName = typeof(T).Name;
+            var collection = GetDB().GetCollection<T>(collectionName);
+            return await collection.Find(filter).ToListAsync();
         }
 
         public static async Task<List<T>> GetAllObjects<T>() where T : DB_SaveableObject

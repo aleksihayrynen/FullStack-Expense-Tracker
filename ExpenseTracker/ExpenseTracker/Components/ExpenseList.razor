@@ -1,0 +1,67 @@
+﻿@using ExpenseTracker.Models.Services
+@using ExpenseTracker.Models
+
+@inject GetItemService GetItemService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<h3>Expense List</h3>
+<p>@(expenses == null ? "You have 0 expenses added" : $"expenses count: {expenses.Count}")</p>
+@if (expenses == null)
+{
+    <p>Loading incomes...</p>
+}
+else if (expenses.Count == 0)
+{
+    <p>No income records found.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var expense in expenses)
+            {
+                <tr>
+                    <td>@expense.Description</td>
+                    <td>@expense.Amount</td>
+                    <td>@expense.Category</td>
+                    <td>@expense.Date.ToShortDateString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+
+    private List<Expense>? expenses;
+    private List<Income>? incomes;
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity != null && user.Identity.IsAuthenticated)
+        {
+            var userId = user.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            Console.WriteLine(userId);
+           
+            if (!string.IsNullOrEmpty(userId))
+            {
+            expenses = await GetItemService.GetUserExpensesAsync(userId);
+            Console.WriteLine("Returning " + expenses.Count + " expenses");
+            }
+
+        }
+    }
+}
