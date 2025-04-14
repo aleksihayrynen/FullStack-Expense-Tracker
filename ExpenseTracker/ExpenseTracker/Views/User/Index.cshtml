@@ -1,5 +1,7 @@
 ﻿@using ExpenseTracker.Components
 
+
+
 <div class="d-flex justify-content-center">
     <button type="button" class="btn btn-success" id="showModalButton">
         Add Item
@@ -11,7 +13,11 @@
 <component type="typeof(ExpenseList)" render-mode="Server" />
 
 
+
+
 @section Scripts {
+    <script src="~/js/ExpenseChart.js"></script>
+    <script src="~/js/highcharts.js"></script>
     <script>
         $(document).ready(function () {
             function loadModal() {

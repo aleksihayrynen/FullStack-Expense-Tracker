@@ -47,7 +47,7 @@ namespace ExpenseTracker.Controllers
                             UserId = userId,
                             Description = model.Description ?? "No description",
                             Amount = model.Amount,
-                            Category = model.Category ?? "Uncategorized",
+                            Category = CapitalizeFirstLetter(model.Category ?? "uncategorized"),
                             Date = model.Date
                         };
                         MongoManipulator.Save(newExpense);
@@ -57,9 +57,9 @@ namespace ExpenseTracker.Controllers
                         var newIncome = new Income
                         {
                             UserId = userId,
-                            Description = model.Description,
+                            Description = model.Description ?? "No description",
                             Amount = model.Amount,
-                            Category = model.Category,
+                            Category = CapitalizeFirstLetter(model.Category ?? "uncategorized"),
                             Date = model.Date
                         };
                         MongoManipulator.Save(newIncome);
@@ -73,6 +73,13 @@ namespace ExpenseTracker.Controllers
                     return PartialView("_AddItemPartial", model);
                 }
             }
+        }
+        string CapitalizeFirstLetter(string? input)
+        {
+            if (string.IsNullOrEmpty(input))
+                return string.Empty;
+
+            return char.ToUpper(input[0]) + input.Substring(1);
         }
     }
 }

@@ -13,6 +13,18 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\js\\ExpenseChart.js",
+      "PackagePath": "staticwebassets\\js\\ExpenseChart.js"
+    },
+    {
+      "Id": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\js\\ExpenseSideChart.js",
+      "PackagePath": "staticwebassets\\js\\ExpenseSideChart.js"
+    },
+    {
+      "Id": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\js\\highcharts.js",
+      "PackagePath": "staticwebassets\\js\\highcharts.js"
+    },
+    {
       "Id": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

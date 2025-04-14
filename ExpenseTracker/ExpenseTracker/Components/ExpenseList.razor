@@ -1,21 +1,21 @@
 ﻿@using ExpenseTracker.Models.Services
 @using ExpenseTracker.Models
+@inject IJSRuntime JS
 
 @inject GetItemService GetItemService
 @inject AuthenticationStateProvider AuthenticationStateProvider
 
+
+<div id="myChart" style="width:100%; height:400px;"></div>
 <h3>Expense List</h3>
 <p>@(expenses == null ? "You have 0 expenses added" : $"expenses count: {expenses.Count}")</p>
 @if (expenses == null)
 {
-    <p>Loading incomes...</p>
-}
-else if (expenses.Count == 0)
-{
-    <p>No income records found.</p>
+    <p>No expenses found</p>
 }
 else
 {
+    
     <table class="table">
         <thead>
             <tr>
@@ -31,13 +31,16 @@ else
                 <tr>
                     <td>@expense.Description</td>
                     <td>@expense.Amount</td>
-                    <td>@expense.Category</td>
+                    <td>@(expense.Category)</td>
                     <td>@expense.Date.ToShortDateString()</td>
                 </tr>
             }
         </tbody>
     </table>
+
 }
+
+
 
 @code {
 
@@ -46,7 +49,7 @@ else
 
 
 
-    protected override async Task OnInitializedAsync()
+    public async Task RefreshExpensesAsync()
     {
         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
@@ -59,9 +62,27 @@ else
             if (!string.IsNullOrEmpty(userId))
             {
             expenses = await GetItemService.GetUserExpensesAsync(userId);
-            Console.WriteLine("Returning " + expenses.Count + " expenses");
-            }
+            Console.WriteLine(expenses);
+                // Process for Highcharts
+                var chartData = expenses
+                .GroupBy(e => e.Category)
+                .Select(g => new
+                {
+                    category = g.Key,
+                    amount = g.Sum(e => e.Amount)
+                    }).ToList();
 
+                // Render chart after component renders
+                await JS.InvokeVoidAsync("renderExpenseChart", "myChart", chartData);
+                StateHasChanged(); // Ensure re-render
+                
+            }
         }
     }
+    protected override async Task OnInitializedAsync()
+    {
+        await RefreshExpensesAsync();
+    }
+
+
 }
