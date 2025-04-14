@@ -6,12 +6,13 @@
     }));
 
     if (formattedChartData.length === 0) {
-        console.log("Jippii");
-        formattedChartData = [{
-            name: 'Data not found ;(',
-            y: 404,
-            color: '#e0e0e0'
-        }];
+        https://codepen.io/pen
+
+    formattedChartData = [{
+        name: 'Data not found ;(',
+        y: 404,
+        color: '#e0e0e0'
+    }];
     }
 
     console.log(formattedChartData);

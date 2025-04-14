@@ -66,8 +66,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>e7wntqbtey</Fingerprint>
-      <Integrity>NijalXU2nd6bMgzhI5zYwgmisueaENsELXDXbg9kwV4=</Integrity>
+      <Fingerprint>d5q3gyj67i</Fingerprint>
+      <Integrity>IS8ZcKQnTeI3/w2DfnWuG/FW4+OINLIMjf65f84VKUU=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\ExpenseChart.js'))</OriginalItemSpec>
@@ -84,8 +84,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>a7kx4z7i9b</Fingerprint>
-      <Integrity>hsQB+okhT2YFnMJ8uT16QgwlKNdOmPWuTPwJKUkNv+Q=</Integrity>
+      <Fingerprint>32ruau12x8</Fingerprint>
+      <Integrity>e/ahkBXjcWQR7MiHQaud+QwWSPusO9TImkNxibBOQUo=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\ExpenseSideChart.js'))</OriginalItemSpec>

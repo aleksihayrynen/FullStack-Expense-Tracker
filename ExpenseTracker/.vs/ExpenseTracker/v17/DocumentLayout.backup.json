@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|c:\\users\\aleks\\documents\\ohjelmointi\\fullstack-joni\\fullstack-expense-tracker\\expensetracker\\expensetracker\\components\\expenselist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|solutionrelative:expensetracker\\components\\expenselist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|c:\\users\\aleks\\documents\\ohjelmointi\\fullstack-joni\\fullstack-expense-tracker\\expensetracker\\expensetracker\\wwwroot\\js\\expensechart.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|solutionrelative:expensetracker\\wwwroot\\js\\expensechart.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|c:\\users\\aleks\\documents\\ohjelmointi\\fullstack-joni\\fullstack-expense-tracker\\expensetracker\\expensetracker\\components\\expenselist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|solutionrelative:expensetracker\\components\\expenselist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|c:\\users\\aleks\\documents\\ohjelmointi\\fullstack-joni\\fullstack-expense-tracker\\expensetracker\\expensetracker\\wwwroot\\js\\expensesidechart.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|solutionrelative:expensetracker\\wwwroot\\js\\expensesidechart.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|c:\\users\\aleks\\documents\\ohjelmointi\\fullstack-joni\\fullstack-expense-tracker\\expensetracker\\expensetracker\\wwwroot\\js\\highcharts.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|solutionrelative:expensetracker\\wwwroot\\js\\highcharts.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|c:\\users\\aleks\\documents\\ohjelmointi\\fullstack-joni\\fullstack-expense-tracker\\expensetracker\\expensetracker\\models\\services\\expensechartdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|solutionrelative:expensetracker\\models\\services\\expensechartdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|c:\\users\\aleks\\documents\\ohjelmointi\\fullstack-joni\\fullstack-expense-tracker\\expensetracker\\expensetracker\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|solutionrelative:expensetracker\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|c:\\users\\aleks\\documents\\ohjelmointi\\fullstack-joni\\fullstack-expense-tracker\\expensetracker\\expensetracker\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|solutionrelative:expensetracker\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|c:\\users\\aleks\\documents\\ohjelmointi\\fullstack-joni\\fullstack-expense-tracker\\expensetracker\\expensetracker\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,14 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|c:\\users\\aleks\\documents\\ohjelmointi\\fullstack-joni\\fullstack-expense-tracker\\expensetracker\\expensetracker\\views\\home\\test.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|solutionrelative:expensetracker\\views\\home\\test.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|c:\\users\\aleks\\documents\\ohjelmointi\\fullstack-joni\\fullstack-expense-tracker\\expensetracker\\expensetracker\\wwwroot\\js\\expensesidechart.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|solutionrelative:expensetracker\\wwwroot\\js\\expensesidechart.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|c:\\users\\aleks\\documents\\ohjelmointi\\fullstack-joni\\fullstack-expense-tracker\\expensetracker\\expensetracker\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|solutionrelative:expensetracker\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|c:\\users\\aleks\\documents\\ohjelmointi\\fullstack-joni\\fullstack-expense-tracker\\expensetracker\\expensetracker\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -65,10 +77,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|c:\\users\\aleks\\documents\\ohjelmointi\\fullstack-joni\\fullstack-expense-tracker\\expensetracker\\expensetracker\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|solutionrelative:expensetracker\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|c:\\users\\aleks\\documents\\ohjelmointi\\fullstack-joni\\fullstack-expense-tracker\\expensetracker\\expensetracker\\models\\services\\expensechartdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|solutionrelative:expensetracker\\models\\services\\expensechartdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E482053F-C908-4C55-9251-5571AFF60384}|ExpenseTracker\\ExpenseTracker.csproj|c:\\users\\aleks\\documents\\ohjelmointi\\fullstack-joni\\fullstack-expense-tracker\\expensetracker\\expensetracker\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -145,7 +153,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "Test.cshtml",
               "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Views\\Home\\Test.cshtml",
               "RelativeDocumentMoniker": "ExpenseTracker\\Views\\Home\\Test.cshtml",
@@ -154,51 +162,24 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-10T14:58:40.539Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ExpenseChart.js",
-              "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\js\\ExpenseChart.js",
-              "RelativeDocumentMoniker": "ExpenseTracker\\wwwroot\\js\\ExpenseChart.js",
-              "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\js\\ExpenseChart.js",
-              "RelativeToolTip": "ExpenseTracker\\wwwroot\\js\\ExpenseChart.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-14T13:08:21.249Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "ExpenseList.razor",
               "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Components\\ExpenseList.razor",
               "RelativeDocumentMoniker": "ExpenseTracker\\Components\\ExpenseList.razor",
               "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Components\\ExpenseList.razor",
               "RelativeToolTip": "ExpenseTracker\\Components\\ExpenseList.razor",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAC8AAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAIwGEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-14T01:49:33.631Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "RegisterController.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Controllers\\RegisterController.cs",
-              "RelativeDocumentMoniker": "ExpenseTracker\\Controllers\\RegisterController.cs",
-              "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Controllers\\RegisterController.cs",
-              "RelativeToolTip": "ExpenseTracker\\Controllers\\RegisterController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAmwDUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T16:05:10.059Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "ExpenseTracker\\Controllers\\LoginController.cs",
@@ -206,25 +187,24 @@
               "RelativeToolTip": "ExpenseTracker\\Controllers\\LoginController.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAewBoAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T16:11:07.399Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-11T16:11:07.399Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "ExpenseSideChart.js",
               "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\js\\ExpenseSideChart.js",
               "RelativeDocumentMoniker": "ExpenseTracker\\wwwroot\\js\\ExpenseSideChart.js",
               "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\js\\ExpenseSideChart.js",
               "RelativeToolTip": "ExpenseTracker\\wwwroot\\js\\ExpenseSideChart.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-04-14T15:08:46.938Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "_AddItemPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Views\\User\\_AddItemPartial.cshtml",
               "RelativeDocumentMoniker": "ExpenseTracker\\Views\\User\\_AddItemPartial.cshtml",
@@ -232,12 +212,11 @@
               "RelativeToolTip": "ExpenseTracker\\Views\\User\\_AddItemPartial.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-12T19:22:13.534Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T19:22:13.534Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Models\\User.cs",
               "RelativeDocumentMoniker": "ExpenseTracker\\Models\\User.cs",
@@ -245,8 +224,7 @@
               "RelativeToolTip": "ExpenseTracker\\Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T19:56:02.645Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-11T19:56:02.645Z"
             },
             {
               "$type": "Document",
@@ -256,105 +234,14 @@
               "RelativeDocumentMoniker": "ExpenseTracker\\Views\\User\\Index.cshtml",
               "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Views\\User\\Index.cshtml",
               "RelativeToolTip": "ExpenseTracker\\Views\\User\\Index.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAIwD4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-12T17:25:19.9Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "ExpenseTracker\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Controllers\\UserController.cs",
-              "RelativeToolTip": "ExpenseTracker\\Controllers\\UserController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAwwDsAAABLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T17:13:03.44Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GetItemsService.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Models\\Services\\GetItemsService.cs",
-              "RelativeDocumentMoniker": "ExpenseTracker\\Models\\Services\\GetItemsService.cs",
-              "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Models\\Services\\GetItemsService.cs",
-              "RelativeToolTip": "ExpenseTracker\\Models\\Services\\GetItemsService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T01:52:15.083Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Income.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Models\\Income.cs",
-              "RelativeDocumentMoniker": "ExpenseTracker\\Models\\Income.cs",
-              "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Models\\Income.cs",
-              "RelativeToolTip": "ExpenseTracker\\Models\\Income.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T21:37:00.46Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MongoManipulator.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Models\\Services\\MongoManipulator.cs",
-              "RelativeDocumentMoniker": "ExpenseTracker\\Models\\Services\\MongoManipulator.cs",
-              "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Models\\Services\\MongoManipulator.cs",
-              "RelativeToolTip": "ExpenseTracker\\Models\\Services\\MongoManipulator.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAwwGAAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T18:23:30.982Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Expense.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Models\\Expense.cs",
-              "RelativeDocumentMoniker": "ExpenseTracker\\Models\\Expense.cs",
-              "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Models\\Expense.cs",
-              "RelativeToolTip": "ExpenseTracker\\Models\\Expense.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T21:36:47.444Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "ExpenseTracker\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "ExpenseTracker\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAowBwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T23:46:16.818Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "ExpenseTracker\\Views\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "ExpenseTracker\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-11T21:47:41.156Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 4,
               "Title": "ExpenseChartDataService.cs",
               "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Models\\Services\\ExpenseChartDataService.cs",
               "RelativeDocumentMoniker": "ExpenseTracker\\Models\\Services\\ExpenseChartDataService.cs",
@@ -367,7 +254,142 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 3,
+              "Title": "highcharts.js",
+              "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\js\\highcharts.js",
+              "RelativeDocumentMoniker": "ExpenseTracker\\wwwroot\\js\\highcharts.js",
+              "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\js\\highcharts.js",
+              "RelativeToolTip": "ExpenseTracker\\wwwroot\\js\\highcharts.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-14T16:59:31.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ExpenseChart.js",
+              "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\js\\ExpenseChart.js",
+              "RelativeDocumentMoniker": "ExpenseTracker\\wwwroot\\js\\ExpenseChart.js",
+              "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\js\\ExpenseChart.js",
+              "RelativeToolTip": "ExpenseTracker\\wwwroot\\js\\ExpenseChart.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-14T13:08:21.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RegisterController.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Controllers\\RegisterController.cs",
+              "RelativeDocumentMoniker": "ExpenseTracker\\Controllers\\RegisterController.cs",
+              "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Controllers\\RegisterController.cs",
+              "RelativeToolTip": "ExpenseTracker\\Controllers\\RegisterController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAmwDUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T16:05:10.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "ExpenseTracker\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "ExpenseTracker\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-14T17:00:38.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "ExpenseTracker\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Controllers\\UserController.cs",
+              "RelativeToolTip": "ExpenseTracker\\Controllers\\UserController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAwwDsAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T17:13:03.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GetItemsService.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Models\\Services\\GetItemsService.cs",
+              "RelativeDocumentMoniker": "ExpenseTracker\\Models\\Services\\GetItemsService.cs",
+              "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Models\\Services\\GetItemsService.cs",
+              "RelativeToolTip": "ExpenseTracker\\Models\\Services\\GetItemsService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T01:52:15.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Income.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Models\\Income.cs",
+              "RelativeDocumentMoniker": "ExpenseTracker\\Models\\Income.cs",
+              "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Models\\Income.cs",
+              "RelativeToolTip": "ExpenseTracker\\Models\\Income.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T21:37:00.46Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MongoManipulator.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Models\\Services\\MongoManipulator.cs",
+              "RelativeDocumentMoniker": "ExpenseTracker\\Models\\Services\\MongoManipulator.cs",
+              "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Models\\Services\\MongoManipulator.cs",
+              "RelativeToolTip": "ExpenseTracker\\Models\\Services\\MongoManipulator.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAwwGAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T18:23:30.982Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Expense.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Models\\Expense.cs",
+              "RelativeDocumentMoniker": "ExpenseTracker\\Models\\Expense.cs",
+              "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Models\\Expense.cs",
+              "RelativeToolTip": "ExpenseTracker\\Models\\Expense.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T21:36:47.444Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "ExpenseTracker\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "ExpenseTracker\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAowBwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T23:46:16.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "ExpenseTracker\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "ExpenseTracker\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-11T21:47:41.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "ExpenseTracker\\Models\\ErrorViewModel.cs",
@@ -379,7 +401,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Program.cs",
               "RelativeDocumentMoniker": "ExpenseTracker\\Program.cs",
@@ -391,7 +413,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "ExpenseTracker\\Views\\Shared\\_Layout.cshtml",
@@ -403,7 +425,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "_Imports.razor",
               "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\_Imports.razor",
               "RelativeDocumentMoniker": "ExpenseTracker\\_Imports.razor",
@@ -415,7 +437,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "ExpenseTracker.csproj",
               "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\ExpenseTracker.csproj",
               "RelativeDocumentMoniker": "ExpenseTracker\\ExpenseTracker.csproj",
@@ -427,7 +449,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "RegisterForm.cs",
               "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Models\\Forms\\RegisterForm.cs",
               "RelativeDocumentMoniker": "ExpenseTracker\\Models\\Forms\\RegisterForm.cs",
@@ -439,7 +461,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Views\\Register\\Register.cshtml",
               "RelativeDocumentMoniker": "ExpenseTracker\\Views\\Register\\Register.cshtml",
@@ -451,7 +473,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "ExpenseTracker\\Views\\Home\\Index.cshtml",
@@ -463,7 +485,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "LoginForm.cs",
               "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Models\\Forms\\LoginForm.cs",
               "RelativeDocumentMoniker": "ExpenseTracker\\Models\\Forms\\LoginForm.cs",
@@ -475,7 +497,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "DB_SaveableObject.cs",
               "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Models\\DB_SaveableObject.cs",
               "RelativeDocumentMoniker": "ExpenseTracker\\Models\\DB_SaveableObject.cs",
@@ -487,7 +509,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "Argon2.cs",
               "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Helper\\Argon2.cs",
               "RelativeDocumentMoniker": "ExpenseTracker\\Helper\\Argon2.cs",
@@ -499,7 +521,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "Unauthenticated.cs",
               "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\CustomActionFilters\\Unauthenticated.cs",
               "RelativeDocumentMoniker": "ExpenseTracker\\CustomActionFilters\\Unauthenticated.cs",
@@ -511,7 +533,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "Error.cshtml",
               "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "ExpenseTracker\\Views\\Shared\\Error.cshtml",
@@ -523,7 +545,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "ExpenseTracker\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -535,7 +557,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\aleks\\AppData\\Local\\SourceServer\\66f4afaa3033a0106e402c8fbd58b72e5d87f6ea42e47c8284b9cda6f6fecdc1\\ExpenseTracker\\ExpenseTracker\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Local\\SourceServer\\66f4afaa3033a0106e402c8fbd58b72e5d87f6ea42e47c8284b9cda6f6fecdc1\\ExpenseTracker\\ExpenseTracker\\Controllers\\UserController.cs",
@@ -548,7 +570,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 34,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\Views\\Login\\Login.cshtml",
               "RelativeDocumentMoniker": "ExpenseTracker\\Views\\Login\\Login.cshtml",
