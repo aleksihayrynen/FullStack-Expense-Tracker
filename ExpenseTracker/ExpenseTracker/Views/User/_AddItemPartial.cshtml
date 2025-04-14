@@ -1,6 +1,5 @@
 ﻿@model ExpenseTracker.Models.Forms.AddItemForm
 
-
 <div class="modal fade" id="addItemModal" tabindex="-1" aria-labelledby="addItemModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -9,7 +8,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form asp-action="AddItem" asp-controller="User" method="post">
+                <form id="addItemForm" method="post">
                     <div class="mb-3">
                         <label asp-for="Type" class="form-label"></label>
                         <select asp-for="Type" class="form-select">
@@ -27,7 +26,7 @@
 
                     <div class="mb-3">
                         <label asp-for="Amount" class="form-label"></label>
-                        <input asp-for="Amount" class="form-control" type="number" step="1" value="" />
+                        <input asp-for="Amount" class="form-control" value="" type="number" step="1" />
                         <span asp-validation-for="Amount" class="text-danger"></span>
                     </div>
 
@@ -52,8 +51,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-

@@ -1,23 +1,50 @@
-﻿<button type="button" class="btn btn-success" id="showModalButton">
-    Add Item
-</button>
+﻿
+<div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-success" id="showModalButton">
+        Add Item
+    </button>
+</div>
 
+<div id="modalContainer"></div>
 
-<div id="modalContainer">
-
-</div> <!-- This will hold the modal content -->
-@section Scripts
-{
+@section Scripts {
     <script>
-        $(document).ready(function() {
-            $("#showModalButton").click(function() {
+        $(document).ready(function () {
+            function loadModal() {
+
+            $.get('@Url.Action("AddItemPartial", "User")', function (response) {
+                $('#modalContainer').html(response);
+                $('#addItemModal').modal('show');
+            });
+        }
+
+            // Load modal on button click
+            $('#showModalButton').click(loadModal);
+
+            // Delegate the form submission to dynamically loaded content
+            $('#modalContainer').on('submit', '#addItemForm', function (e) {
+                e.preventDefault();
+                var form = $(this);
+
                 $.ajax({
-                    url: '@Url.Action("AddItemPartial", "User")',
-                    type: 'GET',
-                    success: function(response) {
+                    url: '@Url.Action("AddItem", "User")',
+                    type: 'POST',
+                    data: form.serialize(),
+                    success: function (response) {
+                    if (response.success) {
+                        $('#addItemModal').modal('hide');
+                        location.reload();
+                    } else {
+                        // Clean up old modal + backdrop
+                        $('.modal-backdrop').remove();
+                        $('#addItemModal').modal('hide');
+                        $('#addItemModal').remove();
+
+                        // Inject updated modal with errors
                         $('#modalContainer').html(response);
                         $('#addItemModal').modal('show');
                     }
+                }
                 });
             });
         });

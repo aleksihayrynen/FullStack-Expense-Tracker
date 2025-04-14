@@ -60,7 +60,6 @@ namespace ExpenseTracker.Controllers
                     ModelState.AddModelError("password", "Username or password incorrect");
                     return View(model);
                 }
-                Console.WriteLine("Fucked up");
             }
             return View(model);
         }

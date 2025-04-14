@@ -7,6 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddRazorPages();
+builder.Services.AddServerSideBlazor();
+
+
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
@@ -37,6 +41,7 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+app.MapBlazorHub();
 
 app.MapControllerRoute(
     name: "default",
