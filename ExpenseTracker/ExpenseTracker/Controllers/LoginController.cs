@@ -24,7 +24,7 @@ namespace ExpenseTracker.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await MongoManipulator.GetObjectByField<User>("Username", model.name);
+                var user = await MongoManipulator.GetObjectByField<User>("Username", model.name.ToLower());
                 if (user != null)
                 {
                     if(Argon2.VerifyPassword(model.password, user.Password , user.Salt)) 

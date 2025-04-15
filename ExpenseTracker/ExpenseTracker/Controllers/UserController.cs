@@ -2,6 +2,7 @@
 using ExpenseTracker.Models.Forms;
 using ExpenseTracker.Models.Services;
 using Microsoft.AspNetCore.Mvc;
+using ExpenseTracker.Models.Utils;
 
 namespace ExpenseTracker.Controllers
 {
@@ -44,10 +45,13 @@ namespace ExpenseTracker.Controllers
                     {
                         var newExpense = new Expense
                         {
+
                             UserId = userId,
+                            Title = UtilityFunctions.CapitalizeFirstLetter(model.Title),
                             Description = model.Description ?? "No description",
                             Amount = model.Amount,
-                            Category = CapitalizeFirstLetter(model.Category ?? "uncategorized"),
+                            Currency = model.Currency ?? "€",
+                            Category = UtilityFunctions.CapitalizeFirstLetter(model.Category ?? "uncategorized"),
                             Date = model.Date
                         };
                         MongoManipulator.Save(newExpense);
@@ -57,9 +61,11 @@ namespace ExpenseTracker.Controllers
                         var newIncome = new Income
                         {
                             UserId = userId,
+                            Title = UtilityFunctions.CapitalizeFirstLetter(model.Title),
                             Description = model.Description ?? "No description",
                             Amount = model.Amount,
-                            Category = CapitalizeFirstLetter(model.Category ?? "uncategorized"),
+                            Currency = model.Currency ?? "€",
+                            Category = UtilityFunctions.CapitalizeFirstLetter(model.Category ?? "uncategorized"),
                             Date = model.Date
                         };
                         MongoManipulator.Save(newIncome);
@@ -73,13 +79,6 @@ namespace ExpenseTracker.Controllers
                     return PartialView("_AddItemPartial", model);
                 }
             }
-        }
-        string CapitalizeFirstLetter(string? input)
-        {
-            if (string.IsNullOrEmpty(input))
-                return string.Empty;
-
-            return char.ToUpper(input[0]) + input.Substring(1);
         }
     }
 }

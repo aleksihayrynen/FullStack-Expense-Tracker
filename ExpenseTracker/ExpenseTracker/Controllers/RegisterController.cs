@@ -27,8 +27,8 @@ namespace ExpenseTracker.Controllers
             {
                 var userList = await MongoManipulator.GetAllObjects<User>();
 
-                bool usernameTaken = userList.Any(u => u.Username == model.name);
-                bool emailTaken = userList.Any(u => u.Email == model.email);
+                bool usernameTaken = userList.Any(u => u.Username.ToLower() == model.name.ToLower());
+                bool emailTaken = userList.Any(u => u.Email == model.email.ToLower());
 
                 if (usernameTaken || emailTaken)
                 {
@@ -47,7 +47,7 @@ namespace ExpenseTracker.Controllers
                     var newUser = new User()
                     {
                         Username = model.name.Trim().ToLower(),
-                        Password = Argon2.HashPassword(model.password.Trim().ToLower(), generatedSalt),
+                        Password = Argon2.HashPassword(model.password.Trim(), generatedSalt),
                         Email = model.email.Trim().ToLower(),
                         IsActive = true,
                         Salt = generatedSalt
