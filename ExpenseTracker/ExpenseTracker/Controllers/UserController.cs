@@ -56,7 +56,7 @@ namespace ExpenseTracker.Controllers
                             Description = model.Description ?? "No description",
                             Amount = model.Amount,
                             Currency = model.Currency ?? "€",
-                            Category = UtilityFunctions.CapitalizeFirstLetter(model.Category ?? "uncategorized"),
+                            Category = UtilityFunctions.CapitalizeFirstLetter(model.Category?.Trim() ?? "uncategorized"),
                             Date = actualDate
                         };
                         MongoManipulator.Save(newExpense);

@@ -20,3 +20,22 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.Expense_filterbar_buttons {
+    display:flex;
+    gap: 10px;
+    margin-bottom: 50px;
+    max-height: 40px;
+}
+
+.Date_input_div {
+    display: flex;
+    gap: 10px;
+    max-height:35px;
+}
+
+.AddItem_div{
+    position:absolute;
+    top:0vh;
+    right:3vh;
+}

@@ -7,7 +7,7 @@
             if (string.IsNullOrEmpty(input))
                 return string.Empty;
 
-            return char.ToUpper(input[0]) + input.Substring(1);
+            return char.ToUpper(input[0]) + input.Substring(1).ToLower();
         }
     }
 }

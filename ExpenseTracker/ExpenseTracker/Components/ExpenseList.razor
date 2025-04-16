@@ -4,6 +4,7 @@
 @inject GetItemService GetItemService
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @using MongoDB.Bson;
+@using ExpenseTracker.Models.Utils;
 
 
 <h3 class="Expense_title" style="margin-bottom:20px">Expense List (@_startDate?.ToString("dd/MM/yyyy") - @_endDate?.ToString("dd/MM/yyyy"))</h3>
@@ -18,7 +19,6 @@
         <InputDate @bind-Value="StartDate" class="form-control"  style="width:50%"/>
         <InputDate @bind-Value="EndDate" class="form-control" style="width:50%" />
     </div>
-
 </div>
 
 
@@ -67,7 +67,7 @@ else
                         <td><input type="number" class="form-control" @bind="expense.Amount" /></td>
                         <td><input class="form-control" @bind="expense.Category" /></td>
                         <td><input type="date" class="form-control" @bind="expense.Date" /></td>
-                        
+
                         <td>
                             <div style="display:flex">
                                 <button class="btn btn-success btn-sm me-1" @onclick="() => SaveEdit(expense)">Save</button>
@@ -82,7 +82,7 @@ else
                         <td>@expense.Title</td>
                         <td>@expense.Description</td>
                         <td>@($"{expense.Amount}{expense.Currency}")</td>
-                        <td>@expense.Category</td>
+                        <td>@UtilityFunctions.CapitalizeFirstLetter(expense.Category)</td>
                         <td>@expense.Date.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</td>
                         <td>
                             @if (expenseToConfirmDelete == expense._id)
@@ -112,7 +112,7 @@ else
     private bool shouldRenderCharts = false;
     private ObjectId? expenseToConfirmDelete = null;
     private string? errorMessage;
-    private Expense backupExpense;
+    private Expense? backupExpense;
 
 
     //Load the initial Expense datea on page reload
@@ -148,7 +148,7 @@ else
     private async Task RenderChartsAsync()
     {
         var chartData = filteredExpenses
-            .GroupBy(e => e.Category)
+            .GroupBy(e => e.Category?.ToLower())
             .Select(g => new
             {
                 category = g.Key,
@@ -173,28 +173,39 @@ else
                 UserId = expense.UserId
             };
         // Set all other expenses to not editing
-        foreach (var e in expenses)
+        if (expenses == null)
+            errorMessage = "Data was not found";
+        else
         {
-            e.IsBeingEdited = false;
+            foreach (var e in expenses)
+            {
+                e.IsBeingEdited = false;
+            }
+
+            // Mark the selected one for editing
+            expense.IsBeingEdited = true;
         }
 
-        // Mark the selected one for editing
-        expense.IsBeingEdited = true;
     }
 
     void CancelEdit(Expense expense)
     {
-        // Revert to the original data
-        expense.Title = backupExpense.Title;
-        expense.Description = backupExpense.Description;
-        expense.Amount = backupExpense.Amount;
-        expense.Currency = backupExpense.Currency;
-        expense.Category = backupExpense.Category;
-        expense.Date = backupExpense.Date;
-        expense.UserId = backupExpense.UserId;
+        if (backupExpense == null)
+            errorMessage = $"Error editing item. Backup might be null";
+        else
+        {
+            // Revert to the original data
+            expense.Title = backupExpense.Title;
+            expense.Description = backupExpense.Description;
+            expense.Amount = backupExpense.Amount;
+            expense.Currency = backupExpense.Currency;
+            expense.Category = backupExpense.Category;
+            expense.Date = backupExpense.Date;
+            expense.UserId = backupExpense.UserId;
 
-        // Mark as not editing
-        expense.IsBeingEdited = false;
+            // Mark as not editing
+            expense.IsBeingEdited = false;
+        }
     }
 
     private async void SaveEdit(Expense expense)
@@ -349,6 +360,7 @@ else
         {
             filteredExpenses = expenses
                 .Where(e => e.Date.Date >= _startDate && e.Date.Date <= _endDate)
+                .OrderByDescending(e => e.Date)
                 .ToList();
         }
         else
