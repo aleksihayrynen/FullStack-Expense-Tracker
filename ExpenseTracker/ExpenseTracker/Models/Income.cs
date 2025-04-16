@@ -19,5 +19,8 @@ namespace ExpenseTracker.Models
         public string? Category { get; set; }
 
         public DateTime Date { get; set; }
+
+        // Optional UI-related property
+        public bool IsBeingEdited { get; set; } = false;
     }
 }

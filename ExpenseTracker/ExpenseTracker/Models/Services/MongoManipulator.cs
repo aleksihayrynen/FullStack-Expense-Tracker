@@ -103,12 +103,18 @@ namespace ExpenseTracker.Models.Services
 			return await collection.Find(_ => true).ToListAsync();
 		}
 
-        private static void Delete<T>(T entity) where T : DB_SaveableObject
+        private static void  Delete<T>(T entity) where T : DB_SaveableObject
         {
             string collectionName = typeof(T).Name;
             var collection = GetDB().GetCollection<T>(collectionName);
             var filter = Builders<T>.Filter.Eq(e => e._id, entity._id);
             collection.DeleteOne(filter);
+        }
+
+        public static Task DeleteEntityHelper<T>(T entity) where T : DB_SaveableObject
+        {
+            Delete(entity); // calling the private static method
+            return Task.CompletedTask;
         }
 
     }

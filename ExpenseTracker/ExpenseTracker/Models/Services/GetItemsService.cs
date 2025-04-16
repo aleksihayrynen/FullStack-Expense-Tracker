@@ -15,5 +15,6 @@ namespace ExpenseTracker.Models.Services
             var filter = Builders<Income>.Filter.And(Builders<Income>.Filter.Eq("UserId", userId));
             return await MongoManipulator.GetAllObjectsByFilter(filter);
         }
+
     }
 }

@@ -3,6 +3,7 @@
 @inject IJSRuntime JS
 @inject GetItemService GetItemService
 @inject AuthenticationStateProvider AuthenticationStateProvider
+@using MongoDB.Bson;
 
 
 <h3 class="Expense_title" style="margin-bottom:20px">Expense List (@_startDate?.ToString("dd/MM/yyyy") - @_endDate?.ToString("dd/MM/yyyy"))</h3>
@@ -31,6 +32,12 @@
 </div>
 <br />
 <p>@(filteredExpenses == null || !filteredExpenses.Any() ? "You have 0 expenses added" : $"Expenses count: {filteredExpenses.Count}")</p>
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger" role="alert" style="display:flex; justify-content:center">
+        @errorMessage
+    </div>
+}
 
 @if (filteredExpenses == null || !filteredExpenses.Any())
 {
@@ -46,18 +53,53 @@ else
                 <th>Amount</th>
                 <th>Category</th>
                 <th>Date</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var expense in filteredExpenses)
             {
-                <tr>
-                    <td>@expense.Title</td>
-                    <td>@expense.Description</td>
-                    <td>@($"{expense.Amount}{expense.Currency}")</td>
-                    <td>@expense.Category</td>
-                    <td>@expense.Date.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</td>
-                </tr>
+                if (expense.IsBeingEdited)
+                {
+                    <tr>
+                        <td><input class="form-control" @bind="expense.Title" /></td>
+                        <td><input class="form-control" @bind="expense.Description" /></td>
+                        <td><input type="number" class="form-control" @bind="expense.Amount" /></td>
+                        <td><input class="form-control" @bind="expense.Category" /></td>
+                        <td><input type="date" class="form-control" @bind="expense.Date" /></td>
+                        
+                        <td>
+                            <div style="display:flex">
+                                <button class="btn btn-success btn-sm me-1" @onclick="() => SaveEdit(expense)">Save</button>
+                                <button class="btn btn-secondary btn-sm" @onclick="() => CancelEdit(expense)">Cancel</button>
+                            </div>
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td>@expense.Title</td>
+                        <td>@expense.Description</td>
+                        <td>@($"{expense.Amount}{expense.Currency}")</td>
+                        <td>@expense.Category</td>
+                        <td>@expense.Date.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</td>
+                        <td>
+                            @if (expenseToConfirmDelete == expense._id)
+                            {
+                                <p>Delete the item?</p>
+                                <button class="btn btn-sm btn-danger me-1" @onclick="() => ConfirmDelete(expense)">Delete</button>
+                                <button class="btn btn-sm btn-secondary" @onclick="CancelDelete">Cancel</button>
+                            }
+                            else
+                            {
+
+                                <button class="btn btn-sm btn-primary me-1" @onclick="() => EditExpense(expense)">Edit</button>
+                                <button class="btn btn-sm btn-danger" @onclick="() => ShowDeleteConfirmation(expense)">Delete</button>
+                            }
+                        </td>
+                    </tr>
+                }
             }
         </tbody>
     </table>
@@ -68,6 +110,9 @@ else
     private List<Expense> filteredExpenses = new();
     private string selectedFilter = "SelectedDates";  //Default dates when entering page is Monthly  view of starting from 1st  to 30-31st. Initialized below in _endDate & _startDate properties
     private bool shouldRenderCharts = false;
+    private ObjectId? expenseToConfirmDelete = null;
+    private string? errorMessage;
+    private Expense backupExpense;
 
 
     //Load the initial Expense datea on page reload
@@ -113,6 +158,97 @@ else
         await JS.InvokeVoidAsync("renderExpenseChart", "myChart", chartData);
         await JS.InvokeVoidAsync("renderExpenseBarChart", "myBarChart", chartData);
     }
+
+    void EditExpense(Expense expense)
+    {
+        backupExpense = new Expense
+            {
+                _id = expense._id,
+                Title = expense.Title,
+                Description = expense.Description,
+                Amount = expense.Amount,
+                Currency = expense.Currency,
+                Category = expense.Category,
+                Date = expense.Date,
+                UserId = expense.UserId
+            };
+        // Set all other expenses to not editing
+        foreach (var e in expenses)
+        {
+            e.IsBeingEdited = false;
+        }
+
+        // Mark the selected one for editing
+        expense.IsBeingEdited = true;
+    }
+
+    void CancelEdit(Expense expense)
+    {
+        // Revert to the original data
+        expense.Title = backupExpense.Title;
+        expense.Description = backupExpense.Description;
+        expense.Amount = backupExpense.Amount;
+        expense.Currency = backupExpense.Currency;
+        expense.Category = backupExpense.Category;
+        expense.Date = backupExpense.Date;
+        expense.UserId = backupExpense.UserId;
+
+        // Mark as not editing
+        expense.IsBeingEdited = false;
+    }
+
+    private async void SaveEdit(Expense expense)
+    {
+        expense.IsBeingEdited = false;
+        try
+        {
+            MongoManipulator.Save(expense);
+            await RenderChartsAsync();
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Error saving expense: {ex.Message}";
+        }
+
+    }
+
+
+    private void ShowDeleteConfirmation(Expense expense)
+    {
+        expenseToConfirmDelete = expense._id;
+    }
+
+    private void CancelDelete()
+    {
+        expenseToConfirmDelete = null;
+    }
+
+    private async Task ConfirmDelete(Expense expense)
+    {
+        await DeleteExpense(expense);
+        expenseToConfirmDelete = null;
+    }
+    
+
+    private async Task DeleteExpense(Expense expense)
+    {
+        try
+        {
+            await MongoManipulator.DeleteEntityHelper(expense);
+            expenses?.Remove(expense);
+            Console.WriteLine("Halooo");
+            filteredExpenses = GetFilteredExpenses(); // Updates the JS charts, StateCHange doesnt affect JSRuntime
+            await RenderChartsAsync();
+            StateHasChanged(); // Update the expense list
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Error saving expense: {ex.Message}";
+        }
+    }
+
+    
+
 
     //Filtering
     /******************************************************************************************/
@@ -167,7 +303,7 @@ else
                 _endDate = _startDate;
                 SetDataRange();
             }
-            else if (_startDate.HasValue && _endDate.HasValue)
+            else
                 SetDataRange();
         }
     }
@@ -184,7 +320,11 @@ else
                 SetDataRange();
             }
             else
+            {
+                _endDate = value;
                 SetDataRange();
+            }
+           
         }
     }
 
