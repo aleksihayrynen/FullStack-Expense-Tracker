@@ -19,6 +19,6 @@ public class AddItemForm : DB_SaveableObject
     [MaxLength(50)]
     public string? Category { get; set; }
 
-    public DateTime Date { get; set; } = DateTime.Today;
+    public DateTime Date { get; set; } = DateTime.Now;
 
 }

@@ -1,9 +1,16 @@
 ﻿@using ExpenseTracker.Models.Services
 @using ExpenseTracker.Models
 @inject IJSRuntime JS
-
 @inject GetItemService GetItemService
 @inject AuthenticationStateProvider AuthenticationStateProvider
+
+
+<h3>Expense List (@selectedFilter)</h3>
+<div class="mb-3 mt-4">
+    <button class="btn btn-outline-primary me-2" @onclick="FilterDaily">Daily</button>
+    <button class="btn btn-outline-primary me-2" @onclick="FilterMonthly">Monthly</button>
+    <button class="btn btn-outline-primary" @onclick="FilterYearly">Yearly</button>
+</div>
 
 
 <div class="row">
@@ -14,15 +21,15 @@
         <div id="myBarChart" style="width:100%; height:400px;"></div>
     </div>
 </div>
-<h3>Expense List</h3>
-<p>@(expenses == null ? "You have 0 expenses added" : $"expenses count: {expenses.Count}")</p>
-@if (expenses == null)
+<br />
+<p>@(filteredExpenses == null || !filteredExpenses.Any() ? "You have 0 expenses added" : $"Expenses count: {filteredExpenses.Count}")</p>
+
+@if (filteredExpenses == null || !filteredExpenses.Any())
 {
     <p>No expenses found</p>
 }
 else
 {
-    
     <table class="table">
         <thead>
             <tr>
@@ -34,67 +41,89 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var expense in expenses)
+            @foreach (var expense in filteredExpenses)
             {
                 <tr>
                     <td>@expense.Title</td>
                     <td>@expense.Description</td>
-                    <td>@($"{expense.Amount} {expense.Currency}")</td>
-                    <td>@(expense.Category)</td>
-                    <td>@expense.Date.ToShortDateString()</td>
+                    <td>@($"{expense.Amount}{expense.Currency}")</td>
+                    <td>@expense.Category</td>
+                    <td>@expense.Date.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</td>
                 </tr>
             }
         </tbody>
     </table>
-
 }
-
-
 
 @code {
     private List<Expense>? expenses;
-    private List<Income>? incomes;
-    private bool shouldRenderCharts = false;
+    private List<Expense> filteredExpenses = new();
+    private string selectedFilter = "Monthly";
 
+
+
+    //Load the initial Expense datea on page reload
     protected override async Task OnInitializedAsync()
-    {
-        await RefreshExpensesAsync();
-        shouldRenderCharts = true; // flag to trigger rendering in next step
-    }
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (shouldRenderCharts && expenses != null)
-        {
-            var chartData = expenses
-                .GroupBy(e => e.Category)
-                .Select(g => new
-                {
-                    category = g.Key,
-                    amount = g.Sum(e => e.Amount)
-                }).ToList();
-
-            await JS.InvokeVoidAsync("renderExpenseChart", "myChart", chartData);
-            await JS.InvokeVoidAsync("renderExpenseBarChart", "myBarChart", chartData);
-
-            shouldRenderCharts = false; // prevent infinite rerender
-        }
-    }
-
-    public async Task RefreshExpensesAsync()
     {
         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
 
-        if (user.Identity != null && user.Identity.IsAuthenticated)
+        if (user.Identity?.IsAuthenticated == true)
         {
             var userId = user.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
 
             if (!string.IsNullOrEmpty(userId))
             {
                 expenses = await GetItemService.GetUserExpensesAsync(userId);
+                filteredExpenses = GetFilteredExpenses(); // populate on load
+                await RenderChartsAsync();
             }
         }
     }
-}
 
+    //Fill the charts with filtered by using IJSRuntime
+    private async Task RenderChartsAsync()
+    {
+        var chartData = filteredExpenses
+            .GroupBy(e => e.Category)
+            .Select(g => new
+            {
+                category = g.Key,
+                amount = g.Sum(e => e.Amount)
+            }).ToList();
+
+        await JS.InvokeVoidAsync("renderExpenseChart", "myChart", chartData);
+        await JS.InvokeVoidAsync("renderExpenseBarChart", "myBarChart", chartData);
+    }
+
+
+    private async Task FilterDaily() => await ChangeFilter("Daily");
+    private async Task FilterMonthly() => await ChangeFilter("Monthly");
+    private async Task FilterYearly() => await ChangeFilter("Yearly");
+
+    private List<Expense> GetFilteredExpenses()
+    {
+        return selectedFilter switch
+        {
+            "Daily" => expenses?.Where(e =>
+                e.Date.Date == DateTime.Today).ToList() ?? new List<Expense>(),
+
+            "Monthly" => expenses?.Where(e =>
+                e.Date.Month == DateTime.Now.Month && e.Date.Year == DateTime.Now.Year).ToList() ?? new List<Expense>(),
+
+            "Yearly" => expenses?.Where(e =>
+                e.Date.Year == DateTime.Now.Year).ToList() ?? new List<Expense>(),
+
+            _ => expenses ?? new List<Expense>()
+        };
+    }
+
+    private async Task ChangeFilter(string mode)
+    {
+        selectedFilter = mode;
+        filteredExpenses = GetFilteredExpenses(); 
+        await RenderChartsAsync();
+    }
+
+
+}

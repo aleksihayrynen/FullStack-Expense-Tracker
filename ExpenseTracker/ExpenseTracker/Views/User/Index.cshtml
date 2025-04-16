@@ -2,11 +2,14 @@
 
 
 
-<div class="d-flex justify-content-center">
-    <button type="button" class="btn btn-success" id="showModalButton">
-        Add Item
-    </button>
+<div class="button_parent" style="position:relative;">
+    <div class="AddItem_div" style="position:absolute; top:20px; right:0px; ">
+        <button type="button" class="btn btn-success" id="showModalButton">
+            Add Item
+        </button>
+    </div>
 </div>
+
 
 <div id="modalContainer"></div>
 
@@ -32,6 +35,7 @@
 
             // Load modal on button click
             $('#showModalButton').click(loadModal);
+            
 
             // Delegate the form submission to dynamically loaded content
             $('#modalContainer').on('submit', '#addItemForm', function (e) {

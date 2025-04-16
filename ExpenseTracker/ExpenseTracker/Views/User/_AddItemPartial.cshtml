@@ -33,7 +33,7 @@
                     <div class="mb-3 row g-2">
                         <div class="col-md-8">
                             <label asp-for="Amount" class="form-label"></label>
-                            <input asp-for="Amount" class="form-control" type="number" step="1" />
+                            <input asp-for="Amount" class="form-control" type="number" step="1" onfocus="this.value=''"  />
                             <span asp-validation-for="Amount" class="text-danger"></span>
                         </div>
 

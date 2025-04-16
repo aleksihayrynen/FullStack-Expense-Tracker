@@ -3,6 +3,7 @@ using ExpenseTracker.Models.Forms;
 using ExpenseTracker.Models.Services;
 using Microsoft.AspNetCore.Mvc;
 using ExpenseTracker.Models.Utils;
+using MongoDB.Bson.Serialization.Serializers;
 
 namespace ExpenseTracker.Controllers
 {
@@ -41,6 +42,10 @@ namespace ExpenseTracker.Controllers
                     if (string.IsNullOrEmpty(userId))
                         throw new Exception("User not authenticated.");
 
+                    // Cause form only accepts dd/mm/yyyy we add the timeof the day to get hour and DB saves all info as UTC +0
+                    // When using dates in display or logic make sure to transfer UTC +0 to  Local time ;D
+                    var actualDate = model.Date + DateTime.Now.TimeOfDay;  
+
                     if (model.Type.ToLower() == "expense")
                     {
                         var newExpense = new Expense
@@ -52,7 +57,7 @@ namespace ExpenseTracker.Controllers
                             Amount = model.Amount,
                             Currency = model.Currency ?? "€",
                             Category = UtilityFunctions.CapitalizeFirstLetter(model.Category ?? "uncategorized"),
-                            Date = model.Date
+                            Date = actualDate
                         };
                         MongoManipulator.Save(newExpense);
                     }
@@ -66,7 +71,7 @@ namespace ExpenseTracker.Controllers
                             Amount = model.Amount,
                             Currency = model.Currency ?? "€",
                             Category = UtilityFunctions.CapitalizeFirstLetter(model.Category ?? "uncategorized"),
-                            Date = model.Date
+                            Date = actualDate
                         };
                         MongoManipulator.Save(newIncome);
                     }
