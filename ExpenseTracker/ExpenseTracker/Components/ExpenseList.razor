@@ -5,11 +5,19 @@
 @inject AuthenticationStateProvider AuthenticationStateProvider
 
 
-<h3>Expense List (@selectedFilter)</h3>
-<div class="mb-3 mt-4">
-    <button class="btn btn-outline-primary me-2" @onclick="FilterDaily">Daily</button>
-    <button class="btn btn-outline-primary me-2" @onclick="FilterMonthly">Monthly</button>
-    <button class="btn btn-outline-primary" @onclick="FilterYearly">Yearly</button>
+<h3 class="Expense_title" style="margin-bottom:20px">Expense List (@_startDate?.ToString("dd/MM/yyyy") - @_endDate?.ToString("dd/MM/yyyy"))</h3>
+<!-- Need to fix the layout responsivesness for flexbox in smaller screens-->
+<div class="Expense_filterbar" style="display:flex; gap:50px ; margin-bottom:10px">
+    <div class="Expense_filterbar_buttons">
+        <button class="btn btn-outline-primary me-2" @onclick="FilterToday">Today</button>
+        <button class="btn btn-outline-primary me-2" @onclick="FilterMonthly">Monthly</button>
+        <button class="btn btn-outline-primary" @onclick="FilterYearly">Yearly</button>
+    </div>
+    <div class="Date_input_div" style="display:flex; gap:10px">
+        <InputDate @bind-Value="StartDate" class="form-control"  style="width:50%"/>
+        <InputDate @bind-Value="EndDate" class="form-control" style="width:50%" />
+    </div>
+
 </div>
 
 
@@ -58,8 +66,8 @@ else
 @code {
     private List<Expense>? expenses;
     private List<Expense> filteredExpenses = new();
-    private string selectedFilter = "Monthly";
-
+    private string selectedFilter = "SelectedDates";  //Default dates when entering page is Monthly  view of starting from 1st  to 30-31st. Initialized below in _endDate & _startDate properties
+    private bool shouldRenderCharts = false;
 
 
     //Load the initial Expense datea on page reload
@@ -75,9 +83,19 @@ else
             if (!string.IsNullOrEmpty(userId))
             {
                 expenses = await GetItemService.GetUserExpensesAsync(userId);
-                filteredExpenses = GetFilteredExpenses(); // populate on load
-                await RenderChartsAsync();
+                filteredExpenses = GetFilteredExpenses();
+                shouldRenderCharts = true;
             }
+        }
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (shouldRenderCharts && expenses != null)
+        {
+            await RenderChartsAsync();
+
+            shouldRenderCharts = false; // prevent infinite rerender
         }
     }
 
@@ -96,27 +114,34 @@ else
         await JS.InvokeVoidAsync("renderExpenseBarChart", "myBarChart", chartData);
     }
 
+    //Filtering
+    /******************************************************************************************/
 
-    private async Task FilterDaily() => await ChangeFilter("Daily");
-    private async Task FilterMonthly() => await ChangeFilter("Monthly");
-    private async Task FilterYearly() => await ChangeFilter("Yearly");
-
-    private List<Expense> GetFilteredExpenses()
+    private void FilterToday()
     {
-        return selectedFilter switch
-        {
-            "Daily" => expenses?.Where(e =>
-                e.Date.Date == DateTime.Today).ToList() ?? new List<Expense>(),
-
-            "Monthly" => expenses?.Where(e =>
-                e.Date.Month == DateTime.Now.Month && e.Date.Year == DateTime.Now.Year).ToList() ?? new List<Expense>(),
-
-            "Yearly" => expenses?.Where(e =>
-                e.Date.Year == DateTime.Now.Year).ToList() ?? new List<Expense>(),
-
-            _ => expenses ?? new List<Expense>()
-        };
+        StartDate = DateTime.Now.Date;
+        EndDate = DateTime.Now.Date;
     }
+
+    private void FilterMonthly()
+    {
+        var today = DateTime.Now.Date;
+        // Set start date to the first day of this month
+        StartDate = new DateTime(today.Year, today.Month, 1);
+
+        // Calculate the number of days in this month to get the last day
+        int lastDay = DateTime.DaysInMonth(today.Year, today.Month);
+        EndDate = new DateTime(today.Year, today.Month, lastDay);
+    }
+
+    private void FilterYearly()
+    {
+        var today = DateTime.Now;
+
+        StartDate = new DateTime(today.Year, 1, 1); // January 1st
+        EndDate = new DateTime(today.Year, 12, 31, 23, 59, 59); // December 31st, end of day
+    }
+
 
     private async Task ChangeFilter(string mode)
     {
@@ -125,5 +150,72 @@ else
         await RenderChartsAsync();
     }
 
+
+    private DateTime? _startDate = new DateTime(DateTime.Now.Date.Year, DateTime.Now.Date.Month, 1);  // Default values basicly copying the Month logic from FilterMonthly()
+    private DateTime? _endDate = new DateTime(DateTime.Now.Date.Year, DateTime.Now.Date.Month, DateTime.DaysInMonth(DateTime.Now.Date.Year, DateTime.Now.Date.Month)); // Default values basicly copying the Month logic from FilterMonthly()
+
+    public DateTime? StartDate
+    {
+        get => _startDate;
+        set
+        {
+            _startDate = value;
+
+            //if startDate is set higher than end date change end date to match startDate
+            if (_startDate.HasValue && _endDate.HasValue && _startDate > _endDate)
+            {
+                _endDate = _startDate;
+                SetDataRange();
+            }
+            else if (_startDate.HasValue && _endDate.HasValue)
+                SetDataRange();
+        }
+    }
+
+    public DateTime? EndDate
+    {
+        get => _endDate;
+        set
+        {
+            //if startDate is set higher than end date change end date to match startDate
+            if (_startDate.HasValue && _endDate.HasValue && value < _startDate.Value)
+            {
+                _endDate = _startDate;
+                SetDataRange();
+            }
+            else
+                SetDataRange();
+        }
+    }
+
+    private async void SetDataRange()
+    {
+        if (_startDate.HasValue && _endDate.HasValue)
+        {
+            await ChangeFilter("SelectedDates");
+        }
+    }
+
+
+    // TODO Maybe add Timezone current version can be inaccurate with large timezone changes
+    private List<Expense> GetFilteredExpenses()
+    {
+        if (expenses == null)
+        {
+            return new List<Expense>();
+        }
+        List<Expense> filteredExpenses = new List<Expense>();
+        if(selectedFilter == "SelectedDates")
+        {
+            filteredExpenses = expenses
+                .Where(e => e.Date.Date >= _startDate && e.Date.Date <= _endDate)
+                .ToList();
+        }
+        else
+        {
+            filteredExpenses = expenses;
+        }
+        return filteredExpenses;
+    }
 
 }

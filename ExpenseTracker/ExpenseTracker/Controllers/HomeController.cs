@@ -27,7 +27,8 @@ public class HomeController : Controller
 
     public IActionResult Test_func(string password)
     {
-        return  View();
+        Console.WriteLine(DateTime.Now);
+        return RedirectToAction("Test");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
