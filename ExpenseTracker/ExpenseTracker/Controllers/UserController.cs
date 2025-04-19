@@ -50,6 +50,23 @@ namespace ExpenseTracker.Controllers
 
                     if (model.Type.ToLower() == "expense")
                     {
+                        /*
+                        for (int i = 0; i < 10; i++)
+                        {
+                            var newExpense = new Expense
+                            {
+                                UserId = userId,
+                                Title = UtilityFunctions.CapitalizeFirstLetter("Page test" + i),
+                                Description = model.Description ?? "No description",
+                                Amount = model.Amount,
+                                Currency = model.Currency ?? "€",  // Assuming model.Currency exists; replace if needed
+                                Category = UtilityFunctions.CapitalizeFirstLetter(model.Category ?? "uncategorized"),
+                                Date = actualDate
+                            };
+
+                            MongoManipulator.Save(newExpense);
+                        }
+                        */
                         var newExpense = new Expense
                         {
 
@@ -62,6 +79,7 @@ namespace ExpenseTracker.Controllers
                             Date = actualDate
                         };
                         MongoManipulator.Save(newExpense);
+                       
                     }
                     else
                     {
