@@ -4,9 +4,11 @@ using ExpenseTracker.Models.Services;
 using Microsoft.AspNetCore.Mvc;
 using ExpenseTracker.Models.Utils;
 using MongoDB.Bson.Serialization.Serializers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ExpenseTracker.Controllers
 {
+    [Authorize]
     public class UserController : Controller
     {
         public IActionResult Index()

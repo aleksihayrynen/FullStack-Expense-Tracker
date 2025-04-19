@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\ExpenseTracker.zn4f1t0fc5.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\Media\\filter_arrow_asc.png",
+      "PackagePath": "staticwebassets\\Media\\filter_arrow_asc.png"
+    },
+    {
+      "Id": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\Media\\filter_arrow_desc.png",
+      "PackagePath": "staticwebassets\\Media\\filter_arrow_desc.png"
+    },
+    {
       "Id": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

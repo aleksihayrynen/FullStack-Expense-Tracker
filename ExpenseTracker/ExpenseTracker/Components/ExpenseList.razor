@@ -30,18 +30,24 @@
         <div id="myBarChart" style="width:100%; height:400px;"></div>
     </div>
 </div>
+<div class="total-box">
+    <p>Expenses:</p>
+    <h3>@filteredExpenses.Sum(e => e.Amount) €</h3>
+</div>
 <br />
-<p>@(filteredExpenses == null || !filteredExpenses.Any() ? "You have 0 expenses added" : $"Expenses count: {filteredExpenses.Count}")</p>
+<div class="expense_list_infobar">
+    <p class="List_count">@(filteredExpenses == null || !filteredExpenses.Any() ? "0 expenses found" : $"Expenses count: {filteredExpenses.Count}")</p>
+    <div class="search_button-container">
+        <button class="btn btn-sm btn-success" @onclick="ApplySearchFilters">Search</button>
+        <button class="btn btn-sm btn-secondary" @onclick="ClearFilters">Clear</button>
+    </div>
+</div>
+
 @if (!string.IsNullOrEmpty(errorMessage))
 {
     <div class="alert alert-danger" role="alert" style="display:flex; justify-content:center">
         @errorMessage
     </div>
-}
-
-@if (filteredExpenses == null || !filteredExpenses.Any())
-{
-    <p>No expenses found</p>
 }
 else
 {
@@ -52,8 +58,33 @@ else
                 <th>Description</th>
                 <th>Amount</th>
                 <th>Category</th>
-                <th>Date</th>
+                <th>
+                    <div class="filter_by_date_container">
+                        Date
+                        <img src="Media/@(sortDescending ? "filter_arrow_asc.png" : "filter_arrow_desc.png")"
+                             @onclick="ToggleSort"
+                            />
+                    </div> 
+                </th>
                 <th>Actions</th>
+            </tr>
+            <tr>
+                <th>
+                    <InputText @bind-Value="searchTitle" class="form-control form-control-sm"  placeholder="Search..." />
+                </th>
+                <th>
+                    <InputText @bind-Value="searchDescription" class="form-control form-control-sm" placeholder="Search..." />
+                </th>
+                <th></th>
+                <th>
+                    <InputText @bind-Value="searchCategory" class="form-control form-control-sm" placeholder="Search..." />
+                </th>
+                <th>
+                    
+                </th>
+                <th>
+
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -114,6 +145,44 @@ else
     private string? errorMessage;
     private Expense? backupExpense;
 
+    private string searchTitle = "";
+    private string searchDescription = "";
+    private string searchCategory = "";
+    private bool sortDescending = true;
+
+
+    private void ToggleSort()
+    {
+        sortDescending = !sortDescending;
+        filteredExpenses = GetFilteredExpenses();
+        _ = RenderChartsAsync(); // Fire and forget
+    }
+
+    private async Task ApplySearchFilters()
+    {
+        filteredExpenses = GetFilteredExpenses();
+        await RenderChartsAsync();
+    }
+
+    private async Task ClearFilters()
+    {
+        searchTitle = "";
+        searchDescription = "";
+        searchCategory = "";
+        sortDescending = true;
+        selectedFilter = "SelectedDates";
+
+        filteredExpenses = GetFilteredExpenses();
+        await RenderChartsAsync();
+    }
+
+
+
+    private async void UpdateFilters()
+{
+    filteredExpenses = GetFilteredExpenses();
+    await RenderChartsAsync();
+}
 
     //Load the initial Expense datea on page reload
     protected override async Task OnInitializedAsync()
@@ -348,26 +417,43 @@ else
     }
 
 
-    // TODO Maybe add Timezone current version can be inaccurate with large timezone changes
     private List<Expense> GetFilteredExpenses()
     {
         if (expenses == null)
-        {
             return new List<Expense>();
-        }
-        List<Expense> filteredExpenses = new List<Expense>();
-        if(selectedFilter == "SelectedDates")
+
+        IEnumerable<Expense> filtered = expenses;
+
+        if (selectedFilter == "SelectedDates")
         {
-            filteredExpenses = expenses
-                .Where(e => e.Date.Date >= _startDate && e.Date.Date <= _endDate)
-                .OrderByDescending(e => e.Date)
-                .ToList();
+            filtered = filtered.Where(e => e.Date.Date >= _startDate && e.Date.Date <= _endDate);
+        }
+
+        if (!string.IsNullOrWhiteSpace(searchTitle))
+        {
+            filtered = filtered.Where(e => e.Title.Contains(searchTitle, StringComparison.OrdinalIgnoreCase));
+        }
+
+        if (!string.IsNullOrWhiteSpace(searchDescription))
+        {
+            filtered = filtered.Where(e => e.Description.Contains(searchDescription, StringComparison.OrdinalIgnoreCase));
+        }
+
+        if (!string.IsNullOrWhiteSpace(searchCategory))
+        {
+            filtered = filtered.Where(e => e.Category.Contains(searchCategory, StringComparison.OrdinalIgnoreCase));
+        }
+
+        // Default to descending order
+        if (sortDescending)
+        {
+            filtered = filtered.OrderByDescending(e => e.Date);
         }
         else
         {
-            filteredExpenses = expenses;
+            filtered = filtered.OrderBy(e => e.Date);
         }
-        return filteredExpenses;
-    }
 
+        return filtered.ToList();
+    }
 }

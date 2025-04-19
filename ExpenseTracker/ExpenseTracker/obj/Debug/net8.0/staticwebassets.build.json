@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8OBYRvfR66FNWkGrxiKPhVW5ijliF3iGcn2RQjY1G2c=",
+  "Hash": "SfgU3kPnDTvAwwIsPmr0SiWncUdefExcXncpuJoGgSw=",
   "Source": "ExpenseTracker",
   "BasePath": "_content/ExpenseTracker",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "0fmkbpc1qs",
-      "Integrity": "hGLwTrtl9YmIA7Eyc6y4p+6FVh4HyuicHRA0u480UWg=",
+      "Fingerprint": "pr1bh2hfy6",
+      "Integrity": "S1kvA/CuG/+zeQl3mey7ZI4VUMFIJZeoZDhz907dfOg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1380,54 +1380,51 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\Media\\filter_arrow_asc.png",
+      "SourceId": "ExpenseTracker",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\",
+      "BasePath": "_content/ExpenseTracker",
+      "RelativePath": "Media/filter_arrow_asc#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ytt7x3m3qk",
+      "Integrity": "xl9za44Y79J3ZHh/SWXu9HCptBklboUE5r2lSconVBM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Media\\filter_arrow_asc.png"
+    },
+    {
+      "Identity": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\Media\\filter_arrow_desc.png",
+      "SourceId": "ExpenseTracker",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\",
+      "BasePath": "_content/ExpenseTracker",
+      "RelativePath": "Media/filter_arrow_desc#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "pnw7p8x7sd",
+      "Integrity": "67WfrffjGCyTelp2igjMBBlY18nT+SyfDovsZ9XYqUc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Media\\filter_arrow_desc.png"
     }
   ],
   "Endpoints": [
-    {
-      "Route": "css/site.0fmkbpc1qs.css",
-      "AssetFile": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "637"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"hGLwTrtl9YmIA7Eyc6y4p+6FVh4HyuicHRA0u480UWg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 12:27:33 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "0fmkbpc1qs"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-hGLwTrtl9YmIA7Eyc6y4p+6FVh4HyuicHRA0u480UWg="
-        }
-      ]
-    },
     {
       "Route": "css/site.css",
       "AssetFile": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\css\\site.css",
@@ -1439,7 +1436,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "637"
+          "Value": "1288"
         },
         {
           "Name": "Content-Type",
@@ -1447,11 +1444,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"hGLwTrtl9YmIA7Eyc6y4p+6FVh4HyuicHRA0u480UWg=\""
+          "Value": "\"S1kvA/CuG/+zeQl3mey7ZI4VUMFIJZeoZDhz907dfOg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 12:27:33 GMT"
+          "Value": "Sat, 19 Apr 2025 03:04:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1461,7 +1458,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-hGLwTrtl9YmIA7Eyc6y4p+6FVh4HyuicHRA0u480UWg="
+          "Value": "sha256-S1kvA/CuG/+zeQl3mey7ZI4VUMFIJZeoZDhz907dfOg="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.pr1bh2hfy6.css",
+      "AssetFile": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1288"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"S1kvA/CuG/+zeQl3mey7ZI4VUMFIJZeoZDhz907dfOg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 19 Apr 2025 03:04:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pr1bh2hfy6"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-S1kvA/CuG/+zeQl3mey7ZI4VUMFIJZeoZDhz907dfOg="
         }
       ]
     },
@@ -1488,7 +1530,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 03:32:14 GMT"
+          "Value": "Sat, 19 Apr 2025 00:59:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1525,7 +1567,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 03:32:14 GMT"
+          "Value": "Sat, 19 Apr 2025 00:59:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1562,7 +1604,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 03:32:14 GMT"
+          "Value": "Sat, 19 Apr 2025 00:59:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1607,7 +1649,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 03:32:14 GMT"
+          "Value": "Sat, 19 Apr 2025 00:59:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6710,6 +6752,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-16aFlqtpsG9RyieKZUUUjkJpqTgcJtWXwT312I4Iz1s="
+        }
+      ]
+    },
+    {
+      "Route": "Media/filter_arrow_asc.png",
+      "AssetFile": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\Media\\filter_arrow_asc.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3296"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xl9za44Y79J3ZHh/SWXu9HCptBklboUE5r2lSconVBM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 19 Apr 2025 02:13:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xl9za44Y79J3ZHh/SWXu9HCptBklboUE5r2lSconVBM="
+        }
+      ]
+    },
+    {
+      "Route": "Media/filter_arrow_asc.ytt7x3m3qk.png",
+      "AssetFile": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\Media\\filter_arrow_asc.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3296"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xl9za44Y79J3ZHh/SWXu9HCptBklboUE5r2lSconVBM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 19 Apr 2025 02:13:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ytt7x3m3qk"
+        },
+        {
+          "Name": "label",
+          "Value": "Media/filter_arrow_asc.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xl9za44Y79J3ZHh/SWXu9HCptBklboUE5r2lSconVBM="
+        }
+      ]
+    },
+    {
+      "Route": "Media/filter_arrow_desc.png",
+      "AssetFile": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\Media\\filter_arrow_desc.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17662"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"67WfrffjGCyTelp2igjMBBlY18nT+SyfDovsZ9XYqUc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 19 Apr 2025 02:20:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-67WfrffjGCyTelp2igjMBBlY18nT+SyfDovsZ9XYqUc="
+        }
+      ]
+    },
+    {
+      "Route": "Media/filter_arrow_desc.pnw7p8x7sd.png",
+      "AssetFile": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\Media\\filter_arrow_desc.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17662"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"67WfrffjGCyTelp2igjMBBlY18nT+SyfDovsZ9XYqUc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 19 Apr 2025 02:20:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pnw7p8x7sd"
+        },
+        {
+          "Name": "label",
+          "Value": "Media/filter_arrow_desc.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-67WfrffjGCyTelp2igjMBBlY18nT+SyfDovsZ9XYqUc="
         }
       ]
     }
