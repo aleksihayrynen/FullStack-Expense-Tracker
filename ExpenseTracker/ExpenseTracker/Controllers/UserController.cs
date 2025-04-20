@@ -11,7 +11,13 @@ namespace ExpenseTracker.Controllers
     [Authorize]
     public class UserController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Expenses()
+        {
+
+            return View();
+        }
+
+        public IActionResult Income()
         {
 
             return View();
@@ -78,7 +84,6 @@ namespace ExpenseTracker.Controllers
                         };
                         MongoManipulator.Save(newIncome);
                     }
-
                     return Json(new { success = true });
                 }
                 catch (Exception ex)

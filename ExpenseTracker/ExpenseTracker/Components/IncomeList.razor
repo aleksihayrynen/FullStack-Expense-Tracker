@@ -7,7 +7,7 @@
 @using ExpenseTracker.Models.Utils;
 
 
-<h3 class="Expense_title" style="margin-bottom:20px">Expense List (@_startDate?.ToString("dd/MM/yyyy") - @_endDate?.ToString("dd/MM/yyyy"))</h3>
+<h3 class="Expense_title" style="margin-bottom:20px">Income List (@_startDate?.ToString("dd/MM/yyyy") - @_endDate?.ToString("dd/MM/yyyy"))</h3>
 <!-- Need to fix the layout responsivesness for flexbox in smaller screens-->
 <div class="Expense_filterbar" style="display:flex; gap:50px ; margin-bottom:10px">
     <div class="Expense_filterbar_buttons">
@@ -32,15 +32,15 @@
 </div>
 <div class="total-box">
     <p>Total: </p>
-    <h3>@totalExpenses €</h3>
+    <h3>@totalIncomes €</h3>
 </div>
 <br />
 <div class="expense_list_infobar">
     @if (searchActive)
     {
-        <p class="List_count">@(filteredExpenses == null || !filteredExpenses.Any() ? "0 expenses found" : $"Expenses count: {pagedExpenses.Count()}")</p>
+        <p class="List_count">@(filteredIncomes == null || !filteredIncomes.Any() ? "0 Incomes found" : $"Income count: {pagedIncomes.Count()}")</p>
     }
-    <p class="List_count">@(filteredExpenses == null || !filteredExpenses.Any() ? "0 expenses found" : $"Expenses count: {ExpenseCountByDate}")</p>
+    <p class="List_count">@(filteredIncomes == null || !filteredIncomes.Any() ? "0 Incomes found" : $"Income count: {IncomeCountByDate}")</p>
     <div class="search_button-container">
         <button class="btn btn-sm btn-success" @onclick="ApplySearchFilters">Search</button>
         @if (searchActive)
@@ -109,23 +109,23 @@ else
             </tr>
         </thead>
         <tbody>
-            @if ((pagedExpenses) != null && (pagedExpenses.Any()))
+            @if ((pagedIncomes) != null && (pagedIncomes.Any()))
             {
-                @foreach (var expense in pagedExpenses)
+                @foreach (var income in pagedIncomes)
                 {
-                    if (expense.IsBeingEdited)
+                    if (income.IsBeingEdited)
                     {
                         <tr>
-                            <td><input class="form-control" @bind="expense.Title" /></td>
-                            <td><input class="form-control" @bind="expense.Description" /></td>
-                            <td><input type="number" class="form-control" @bind="expense.Amount" /></td>
-                            <td><input class="form-control" @bind="expense.Category" /></td>
-                            <td><input type="date" class="form-control" @bind="expense.Date" /></td>
+                            <td><input class="form-control" @bind="income.Title" /></td>
+                            <td><input class="form-control" @bind="income.Description" /></td>
+                            <td><input type="number" class="form-control" @bind="income.Amount" /></td>
+                            <td><input class="form-control" @bind="income.Category" /></td>
+                            <td><input type="date" class="form-control" @bind="income.Date" /></td>
 
                             <td>
                                 <div style="display:flex">
-                                    <button class="btn btn-success btn-sm me-1" @onclick="() => SaveEdit(expense)">Save</button>
-                                    <button class="btn btn-secondary btn-sm" @onclick="() => CancelEdit(expense)">Cancel</button>
+                                    <button class="btn btn-success btn-sm me-1" @onclick="() => SaveEdit(income)">Save</button>
+                                    <button class="btn btn-secondary btn-sm" @onclick="() => CancelEdit(income)">Cancel</button>
                                 </div>
                             </td>
                         </tr>
@@ -133,22 +133,22 @@ else
                     else
                     {
                         <tr>
-                            <td>@expense.Title</td>
-                            <td>@expense.Description</td>
-                            <td>@($"{expense.Amount}{expense.Currency}")</td>
-                            <td>@UtilityFunctions.CapitalizeFirstLetter(expense.Category)</td>
-                            <td>@expense.Date.ToLocalTime().ToString("dd/MM/yyyy")</td>
+                            <td>@income.Title</td>
+                            <td>@income.Description</td>
+                            <td>@($"{income.Amount}{income.Currency}")</td>
+                            <td>@UtilityFunctions.CapitalizeFirstLetter(income.Category)</td>
+                            <td>@income.Date.ToLocalTime().ToString("dd/MM/yyyy")</td>
                             <td>
-                                @if (expenseToConfirmDelete == expense._id)
+                                @if (incomeToConfirmDelete == income._id)
                                 {
                                     <p>Delete the item?</p>
-                                    <button class="btn btn-sm btn-danger me-1" @onclick="() => ConfirmDelete(expense)">Delete</button>
+                                    <button class="btn btn-sm btn-danger me-1" @onclick="() => ConfirmDelete(income)">Delete</button>
                                     <button class="btn btn-sm btn-secondary" @onclick="CancelDelete">Cancel</button>
                                 }
                                 else
                                 {
-                                    <button class="btn btn-sm btn-primary me-1" @onclick="() => EditExpense(expense)">Edit</button>
-                                    <button class="btn btn-sm btn-danger" @onclick="() => ShowDeleteConfirmation(expense)">Delete</button>
+                                    <button class="btn btn-sm btn-primary me-1" @onclick="() => EditExpense(income)">Edit</button>
+                                    <button class="btn btn-sm btn-danger" @onclick="() => ShowDeleteConfirmation(income)">Delete</button>
                                 }
                             </td>
                         </tr>
@@ -159,27 +159,27 @@ else
     </table>
     <div class="pagination-controls mt-3" style="display: flex; align-items: center; gap: 10px;">
         <button class="btn btn-sm btn-outline-primary" @onclick="@(() => PageChange(-1))" disabled="@(pageNumber == 1)">Previous</button>
-        <span>Page @pageNumber of @Math.Ceiling((double)ExpenseCountByDate / pageSize)</span>
-        <button class="btn btn-sm btn-outline-primary" @onclick="@(() => PageChange(1))"disabled="@(pageNumber >= Math.Ceiling((double)ExpenseCountByDate / pageSize))">Next</button>
+        <span>Page @pageNumber of @Math.Ceiling((double)IncomeCountByDate / pageSize)</span>
+        <button class="btn btn-sm btn-outline-primary" @onclick="@(() => PageChange(1))"disabled="@(pageNumber >= Math.Ceiling((double)IncomeCountByDate / pageSize))">Next</button>
     </div>
 }
 
 @code {
     //List initializations
-    private List<Expense>? expenses;
-    private List<Expense> filteredExpenses = new();
-    private List<Expense> pagedExpenses = new();
+    private List<Income>? incomes;
+    private List<Income> filteredIncomes = new();
+    private List<Income> pagedIncomes = new();
 
     //Common variables used in initz HTML
     private string selectedFilter = "SelectedDates";  //Default dates when entering page is Monthly  view of starting from 1st  to 30-31st. Initialized below in _endDate & _startDate properties
     private bool shouldRenderCharts = false;
     private string? errorMessage;
-    private decimal totalExpenses;
-    private int ExpenseCountByDate;
+    private decimal totalIncomes;
+    private int IncomeCountByDate;
 
     //Edit and Delete variables
-    private ObjectId? expenseToConfirmDelete = null;
-    private Expense? backupExpense;
+    private ObjectId? incomeToConfirmDelete = null;
+    private Income? backupIncome;
 
     //Search field variables
     private string searchTitle = "";
@@ -209,8 +209,8 @@ else
 
             if (!string.IsNullOrEmpty(userId))
             {
-                expenses = await GetItemService.GetUserExpensesAsync(userId);
-                filteredExpenses = GetFilteredExpenses(pageNumber, pageSize);
+                incomes = await GetItemService.GetUserIncomesAsync(userId);
+                filteredIncomes = GetFilteredIncomes(pageNumber, pageSize);
                 shouldRenderCharts = true;
             }
         }
@@ -218,7 +218,7 @@ else
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (shouldRenderCharts && expenses != null)
+        if (shouldRenderCharts && incomes != null)
         {
             await RenderChartsAsync();
 
@@ -229,7 +229,8 @@ else
     //Fill the charts with filtered by using IJSRuntime
     private async Task RenderChartsAsync()
     {
-        var chartData = filteredExpenses
+        Console.WriteLine(filteredIncomes.ToList());
+        var chartData = filteredIncomes
             .GroupBy(e => e.Category?.ToLower())
             .Select(g => new
             {
@@ -245,61 +246,61 @@ else
     //Edit and Delete functions
     /******************************************************************************************/
 
-    void EditExpense(Expense expense)
+    void EditExpense(Income income)
     {
-        backupExpense = new Expense
+        backupIncome = new Income
             {
-                _id = expense._id,
-                Title = expense.Title,
-                Description = expense.Description,
-                Amount = expense.Amount,
-                Currency = expense.Currency,
-                Category = expense.Category,
-                Date = expense.Date,
-                UserId = expense.UserId
+                _id = income._id,
+                Title = income.Title,
+                Description = income.Description,
+                Amount = income.Amount,
+                Currency = income.Currency,
+                Category = income.Category,
+                Date = income.Date,
+                UserId = income.UserId
             };
-        // Set all other expenses to not editing
-        if (expenses == null)
+        // Set all other incomes to not editing
+        if (incomes == null)
             errorMessage = "Data was not found";
         else
         {
-            foreach (var e in expenses)
+            foreach (var e in incomes)
             {
                 e.IsBeingEdited = false;
             }
 
             // Mark the selected one for editing
-            expense.IsBeingEdited = true;
+            income.IsBeingEdited = true;
         }
 
     }
 
-    void CancelEdit(Expense expense)
+    void CancelEdit(Income income)
     {
-        if (backupExpense == null)
+        if (backupIncome == null)
             errorMessage = $"Error editing item. Backup might be null";
         else
         {
             // Revert to the original data
-            expense.Title = backupExpense.Title;
-            expense.Description = backupExpense.Description;
-            expense.Amount = backupExpense.Amount;
-            expense.Currency = backupExpense.Currency;
-            expense.Category = backupExpense.Category;
-            expense.Date = backupExpense.Date;
-            expense.UserId = backupExpense.UserId;
+            income.Title = backupIncome.Title;
+            income.Description = backupIncome.Description;
+            income.Amount = backupIncome.Amount;
+            income.Currency = backupIncome.Currency;
+            income.Category = backupIncome.Category;
+            income.Date = backupIncome.Date;
+            income.UserId = backupIncome.UserId;
 
             // Mark as not editing
-            expense.IsBeingEdited = false;
+            income.IsBeingEdited = false;
         }
     }
 
-    private async void SaveEdit(Expense expense)
+    private async void SaveEdit(Income income)
     {
-        expense.IsBeingEdited = false;
+        income.IsBeingEdited = false;
         try
         {
-            MongoManipulator.Save(expense);
+            MongoManipulator.Save(income);
             await RenderChartsAsync();
         }
         catch (Exception ex)
@@ -310,36 +311,36 @@ else
     }
 
 
-    private void ShowDeleteConfirmation(Expense expense)
+    private void ShowDeleteConfirmation(Income income)
     {
-        expenseToConfirmDelete = expense._id;
+        incomeToConfirmDelete = income._id;
     }
 
     private void CancelDelete()
     {
-        expenseToConfirmDelete = null;
+        incomeToConfirmDelete = null;
     }
 
-    private async Task ConfirmDelete(Expense expense)
+    private async Task ConfirmDelete(Income income)
     {
-        await DeleteExpense(expense);
-        expenseToConfirmDelete = null;
+        await DeleteExpense(income);
+        incomeToConfirmDelete = null;
     }
 
 
-    private async Task DeleteExpense(Expense expense)
+    private async Task DeleteExpense(Income income)
     {
         try
         {
-            await MongoManipulator.DeleteEntityHelper(expense);
-            expenses?.Remove(expense);
-            filteredExpenses = GetFilteredExpenses(pageNumber, pageSize);
+            await MongoManipulator.DeleteEntityHelper(income);
+            incomes?.Remove(income);
+            filteredIncomes = GetFilteredIncomes(pageNumber, pageSize);
             await RenderChartsAsync(); // Updates the JS charts, StateCHange doesnt affect JSRuntime
-            StateHasChanged(); // Update the expense list
+            StateHasChanged(); // Update the income list
         }
         catch (Exception ex)
         {
-            errorMessage = $"Error saving expense: {ex.Message}";
+            errorMessage = $"Error saving income: {ex.Message}";
         }
     }
     #endregion
@@ -353,14 +354,14 @@ else
     {
         sortByAmount = true;
         selectedSort = (selectedSort == "AmountDesc") ? "AmountAsc" : "AmountDesc";
-        filteredExpenses = GetFilteredExpenses(pageNumber, pageSize);
+        filteredIncomes = GetFilteredIncomes(pageNumber, pageSize);
     }
 
     private void ToggleDateSort()
     {
         sortByAmount = false;
         selectedSort = (selectedSort == "DateDesc") ? "DateAsc" : "DateDesc";
-        filteredExpenses = GetFilteredExpenses(pageNumber, pageSize);
+        filteredIncomes = GetFilteredIncomes(pageNumber, pageSize);
     }
 
     private async Task ApplySearchFilters()
@@ -372,7 +373,7 @@ else
 
         if (!string.IsNullOrWhiteSpace(searchTitle) || !string.IsNullOrWhiteSpace(searchDescription) || !string.IsNullOrWhiteSpace(searchCategory))
         {
-            filteredExpenses = GetFilteredExpenses(pageNumber, pageSize);
+            filteredIncomes = GetFilteredIncomes(pageNumber, pageSize);
             searchActive = true;
             await RenderChartsAsync();
         }
@@ -391,7 +392,7 @@ else
         selectedFilter = "SelectedDates";
         searchActive = false;
 
-        filteredExpenses = GetFilteredExpenses(pageNumber, pageSize);
+        filteredIncomes = GetFilteredIncomes(pageNumber, pageSize);
         await RenderChartsAsync();
     }
 
@@ -404,7 +405,7 @@ else
     private int PageChange(int change)
     {
         pageNumber = pageNumber + change;
-        filteredExpenses = GetFilteredExpenses(pageNumber, pageSize);
+        filteredIncomes = GetFilteredIncomes(pageNumber, pageSize);
         return pageNumber;
     }
 
@@ -415,7 +416,7 @@ else
         {
             pageSize = newSize;
             pageNumber = 1;
-            filteredExpenses = GetFilteredExpenses(pageNumber, pageSize);
+            filteredIncomes = GetFilteredIncomes(pageNumber, pageSize);
 
         }
     }
@@ -455,7 +456,7 @@ else
     private async Task ChangeFilter(string mode)
     {
         selectedFilter = mode;
-        filteredExpenses = GetFilteredExpenses(pageNumber, pageSize);
+        filteredIncomes = GetFilteredIncomes(pageNumber, pageSize);
         await RenderChartsAsync();
     }
 
@@ -511,17 +512,17 @@ else
 
 
     //Maybe refactor this? GOes by order adding all the filters
-    private List<Expense> GetFilteredExpenses(int pageNumber, int pageSize)
+    private List<Income> GetFilteredIncomes(int pageNumber, int pageSize)
     {
-        if (expenses == null)
-            return new List<Expense>();
+        if (incomes == null)
+            return new List<Income>();
 
-        IEnumerable<Expense> filtered = expenses;
+        IEnumerable<Income> filtered = incomes;
 
         if (selectedFilter == "SelectedDates")
         {
             filtered = filtered.Where(e => e.Date.Date >= _startDate && e.Date.Date <= _endDate);
-            ExpenseCountByDate = filtered.Count();
+            IncomeCountByDate = filtered.Count();
 
         }
 
@@ -565,9 +566,9 @@ else
         }
 
         //Get the filtered dates or saerch sums
-        totalExpenses = filtered.Sum(e => e.Amount);
+        totalIncomes = filtered.Sum(e => e.Amount);
         // Paging
-        pagedExpenses = filtered.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+        pagedIncomes = filtered.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
 
         return filtered.ToList();
     }

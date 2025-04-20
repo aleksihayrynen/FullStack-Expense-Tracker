@@ -20,17 +20,6 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Test(string password)
-    {
-        return View();
-    }
-
-    public IActionResult Test_func(string password)
-    {
-        Console.WriteLine(DateTime.Now);
-        return RedirectToAction("Test");
-    }
-
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

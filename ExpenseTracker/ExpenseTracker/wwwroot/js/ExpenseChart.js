@@ -23,6 +23,7 @@
         }));
     }
 
+
     Highcharts.chart(elementId, {
         chart: {
             type: 'pie'

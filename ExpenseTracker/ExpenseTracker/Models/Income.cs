@@ -20,7 +20,6 @@ namespace ExpenseTracker.Models
 
         public DateTime Date { get; set; }
 
-        // Optional UI-related property
         public bool IsBeingEdited { get; set; } = false;
     }
 }
