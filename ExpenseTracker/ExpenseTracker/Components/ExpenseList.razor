@@ -65,13 +65,19 @@ else
             <tr>
                 <th>Title</th>
                 <th>Description</th>
-                <th>Amount</th>
+                <th>
+                    <div class="filter_by_date_container">
+                        Amount
+                        <img src="Media/@(selectedSort == "AmountDesc" ? "filter_arrow_desc.png" : "filter_arrow_asc.png")"
+                             @onclick="ToggleAmountSort" />
+                    </div>
+                </th>
                 <th>Category</th>
                 <th>
                     <div class="filter_by_date_container">
                         Date
-                        <img src="Media/@(sortDescending ? "filter_arrow_asc.png" : "filter_arrow_desc.png")"
-                        @onclick="ToggleSort" />
+                        <img src="Media/@(selectedSort == "DateDesc" ? "filter_arrow_desc.png" : "filter_arrow_asc.png")"
+                             @onclick="ToggleDateSort" />
                     </div>
                 </th>
                 <th>Actions</th>
@@ -180,7 +186,10 @@ else
     private string searchDescription = "";
     private string searchCategory = "";
     private bool sortDescending = true;
+    private bool sortByAmount = false;
     private bool searchActive = false;
+    private string selectedSort = "DateAsc"; // "DateAsc", "DateDesc", "AmountAsc", "AmountDesc"
+
 
     //Page variables
     private int pageNumber = 1;
@@ -338,11 +347,19 @@ else
     //Search filters
     /******************************************************************************************/
 
-    private void ToggleSort()
+
+    private void ToggleAmountSort()
     {
-        sortDescending = !sortDescending;
+        sortByAmount = true;
+        selectedSort = (selectedSort == "AmountDesc") ? "AmountAsc" : "AmountDesc";
         filteredExpenses = GetFilteredExpenses(pageNumber, pageSize);
-        // No need to refresh the charts on sort
+    }
+
+    private void ToggleDateSort()
+    {
+        sortByAmount = false;
+        selectedSort = (selectedSort == "DateDesc") ? "DateAsc" : "DateDesc";
+        filteredExpenses = GetFilteredExpenses(pageNumber, pageSize);
     }
 
     private async Task ApplySearchFilters()
@@ -514,18 +531,32 @@ else
             filtered = filtered.Where(e => (e.Category ?? "").Contains(searchCategory, StringComparison.OrdinalIgnoreCase)); // ?? "" a null check just in case
         }
 
-        // Default to descending order
-        if (sortDescending)
+        // Sorting logic based on the selected sort criteria (amount or date)
+        if (sortByAmount)
         {
-            filtered = filtered.OrderByDescending(e => e.Date);
-            totalExpenses = filtered.Sum(e => e.Amount);  // Gets sum of all filtered items 
+            if (selectedSort == "AmountDesc")
+            {
+                filtered = filtered.OrderByDescending(e => e.Amount);
+            }
+            else
+            {
+                filtered = filtered.OrderBy(e => e.Amount);
+            }
         }
         else
         {
-            filtered = filtered.OrderBy(e => e.Date);
-            totalExpenses = filtered.Sum(e => e.Amount); // Gets sum of all filtered items
+            if (selectedSort == "DateDesc")
+            {
+                filtered = filtered.OrderByDescending(e => e.Date);
+            }
+            else
+            {
+                filtered = filtered.OrderBy(e => e.Date);
+            }
         }
 
+        //Get the filtered dates or saerch sums
+        totalExpenses = filtered.Sum(e => e.Amount);
         // Paging
         pagedExpenses = filtered.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
 

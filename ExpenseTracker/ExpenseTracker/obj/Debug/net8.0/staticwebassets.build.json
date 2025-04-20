@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MR6fo+RXI0RUOL4oI6wf8zRSbXqbME+bsg3j9xU4NtU=",
+  "Hash": "cqeQXZs/qF9eMtXNLe/f3xIe1fMmbbYsiJTOMHGt9K8=",
   "Source": "ExpenseTracker",
   "BasePath": "_content/ExpenseTracker",
   "Mode": "Default",
@@ -115,8 +115,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "u2o8ncgmnr",
-      "Integrity": "Gi3P/0BqsRWWVijS8pRMAj4oAuSTpz+HubCazG5FM/Q=",
+      "Fingerprint": "lc6bc0anix",
+      "Integrity": "Gx9QQzRs+arYg0qBazsnEDlBa850Uopgj0K9b/G1jBk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\ExpenseChart.js"
@@ -1530,7 +1530,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 19 Apr 2025 23:27:09 GMT"
+          "Value": "Sun, 20 Apr 2025 02:15:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1567,7 +1567,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 19 Apr 2025 23:27:09 GMT"
+          "Value": "Sun, 20 Apr 2025 02:15:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1604,7 +1604,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 19 Apr 2025 23:27:09 GMT"
+          "Value": "Sun, 20 Apr 2025 02:15:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1649,7 +1649,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 19 Apr 2025 23:27:09 GMT"
+          "Value": "Sun, 20 Apr 2025 02:15:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1764,7 +1764,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1181"
+          "Value": "1469"
         },
         {
           "Name": "Content-Type",
@@ -1772,11 +1772,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Gi3P/0BqsRWWVijS8pRMAj4oAuSTpz+HubCazG5FM/Q=\""
+          "Value": "\"Gx9QQzRs+arYg0qBazsnEDlBa850Uopgj0K9b/G1jBk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 20 Apr 2025 00:15:22 GMT"
+          "Value": "Sun, 20 Apr 2025 00:18:46 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1786,12 +1786,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Gi3P/0BqsRWWVijS8pRMAj4oAuSTpz+HubCazG5FM/Q="
+          "Value": "sha256-Gx9QQzRs+arYg0qBazsnEDlBa850Uopgj0K9b/G1jBk="
         }
       ]
     },
     {
-      "Route": "js/ExpenseChart.u2o8ncgmnr.js",
+      "Route": "js/ExpenseChart.lc6bc0anix.js",
       "AssetFile": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\js\\ExpenseChart.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1801,7 +1801,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1181"
+          "Value": "1469"
         },
         {
           "Name": "Content-Type",
@@ -1809,11 +1809,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Gi3P/0BqsRWWVijS8pRMAj4oAuSTpz+HubCazG5FM/Q=\""
+          "Value": "\"Gx9QQzRs+arYg0qBazsnEDlBa850Uopgj0K9b/G1jBk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 20 Apr 2025 00:15:22 GMT"
+          "Value": "Sun, 20 Apr 2025 00:18:46 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1823,7 +1823,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "u2o8ncgmnr"
+          "Value": "lc6bc0anix"
         },
         {
           "Name": "label",
@@ -1831,7 +1831,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Gi3P/0BqsRWWVijS8pRMAj4oAuSTpz+HubCazG5FM/Q="
+          "Value": "sha256-Gx9QQzRs+arYg0qBazsnEDlBa850Uopgj0K9b/G1jBk="
         }
       ]
     },

@@ -66,8 +66,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>u2o8ncgmnr</Fingerprint>
-      <Integrity>Gi3P/0BqsRWWVijS8pRMAj4oAuSTpz+HubCazG5FM/Q=</Integrity>
+      <Fingerprint>lc6bc0anix</Fingerprint>
+      <Integrity>Gx9QQzRs+arYg0qBazsnEDlBa850Uopgj0K9b/G1jBk=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\ExpenseChart.js'))</OriginalItemSpec>
