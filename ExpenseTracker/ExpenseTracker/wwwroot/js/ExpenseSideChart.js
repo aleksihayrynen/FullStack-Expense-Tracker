@@ -3,9 +3,9 @@
 
     const topCategories = [...chartData]
         .sort((a, b) => b.amount - a.amount)
-        .slice(0, 10);
+        .slice(0, 5);
 
-    const categories = topCategories.map(item => item.category);
+    const categories = topCategories.map(item => item.category.charAt(0).toUpperCase() + item.category.slice(1));
     const percentages = topCategories.map(item => (item.amount / totalAmount * 100).toFixed(2));
 
     // Generate colored data points (using Highcharts default colors)
@@ -13,7 +13,7 @@
     const dataWithColors = topCategories.map((item, index) => ({
         y: item.amount,
         color: colors[index % colors.length],
-        category: item.category
+        category: item.category.charAt(0).toUpperCase() + item.category.slice(1)
     }));
 
     Highcharts.chart(elementId, {
@@ -21,7 +21,7 @@
             type: 'bar'
         },
         title: {
-            text: 'Top 10 Categories by Spending'
+            text: 'Top 5 Categories by Spending'
         },
         xAxis: {
             categories: categories,
@@ -30,7 +30,7 @@
         yAxis: {
             min: 0,
             title: {
-                text: 'Amount ($)',
+                text: 'Amount (€)',
                 align: 'high'
             },
             labels: {

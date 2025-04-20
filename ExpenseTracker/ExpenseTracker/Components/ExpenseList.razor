@@ -36,6 +36,10 @@
 </div>
 <br />
 <div class="expense_list_infobar">
+    @if (searchActive)
+    {
+        <p class="List_count">@(filteredExpenses == null || !filteredExpenses.Any() ? "0 expenses found" : $"Expenses count: {pagedExpenses.Count()}")</p>
+    }
     <p class="List_count">@(filteredExpenses == null || !filteredExpenses.Any() ? "0 expenses found" : $"Expenses count: {ExpenseCountByDate}")</p>
     <div class="search_button-container">
         <button class="btn btn-sm btn-success" @onclick="ApplySearchFilters">Search</button>
@@ -89,19 +93,19 @@ else
                 <th>
                     <div style="display: flex; align-items: center; gap: 10px;">
                         <select class="form-select form-select-sm" style="width: auto;" @onchange="OnPageSizeChanged">
-                            <option value="5">5</option>
-                            <option value="10">10</option>
-                            <option value="20">20</option>
-                            <option value="50">50</option>
+                            <option value="5" selected="@(pageSize == 5)">5</option>
+                            <option value="10" selected="@(pageSize == 10)">10</option>
+                            <option value="20" selected="@(pageSize == 20)">20</option>
+                            <option value="50" selected="@(pageSize == 50)">50</option>
                         </select>
                     </div>
                 </th>
             </tr>
         </thead>
         <tbody>
-            @if ((filteredExpenses) != null && (filteredExpenses.Any()))
+            @if ((pagedExpenses) != null && (pagedExpenses.Any()))
             {
-                @foreach (var expense in filteredExpenses)
+                @foreach (var expense in pagedExpenses)
                 {
                     if (expense.IsBeingEdited)
                     {
@@ -127,7 +131,7 @@ else
                             <td>@expense.Description</td>
                             <td>@($"{expense.Amount}{expense.Currency}")</td>
                             <td>@UtilityFunctions.CapitalizeFirstLetter(expense.Category)</td>
-                            <td>@expense.Date.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</td>
+                            <td>@expense.Date.ToLocalTime().ToString("dd/MM/yyyy")</td>
                             <td>
                                 @if (expenseToConfirmDelete == expense._id)
                                 {
@@ -155,15 +159,21 @@ else
 }
 
 @code {
+    //List initializations
     private List<Expense>? expenses;
     private List<Expense> filteredExpenses = new();
+    private List<Expense> pagedExpenses = new();
+
+    //Common variables used in initz HTML
     private string selectedFilter = "SelectedDates";  //Default dates when entering page is Monthly  view of starting from 1st  to 30-31st. Initialized below in _endDate & _startDate properties
     private bool shouldRenderCharts = false;
-    private ObjectId? expenseToConfirmDelete = null;
     private string? errorMessage;
-    private Expense? backupExpense;
     private decimal totalExpenses;
     private int ExpenseCountByDate;
+
+    //Edit and Delete variables
+    private ObjectId? expenseToConfirmDelete = null;
+    private Expense? backupExpense;
 
     //Search field variables
     private string searchTitle = "";
@@ -176,24 +186,6 @@ else
     private int pageNumber = 1;
     private int pageSize = 10;
 
-    private int PageChange(int change)
-    {
-        pageNumber = pageNumber + change;
-        filteredExpenses = GetFilteredExpenses(pageNumber, pageSize);
-        return pageNumber;
-    }
-
-
-    private async Task OnPageSizeChanged(ChangeEventArgs e)
-    {
-        if (int.TryParse(e.Value?.ToString(), out var newSize))
-        {
-            var a = newSize;
-            pageNumber = 1;
-            filteredExpenses = GetFilteredExpenses(pageNumber, a);
-
-        }
-    }
 
     //Load the initial Expense datea on page reload
     protected override async Task OnInitializedAsync()
@@ -381,6 +373,29 @@ else
 
     #endregion
 
+    #region PageChange
+
+    private int PageChange(int change)
+    {
+        pageNumber = pageNumber + change;
+        filteredExpenses = GetFilteredExpenses(pageNumber, pageSize);
+        return pageNumber;
+    }
+
+
+    private void OnPageSizeChanged(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value?.ToString(), out var newSize))
+        {
+            pageSize = newSize;
+            pageNumber = 1;
+            filteredExpenses = GetFilteredExpenses(pageNumber, pageSize);
+
+        }
+    }
+
+    #endregion
+
     #region Filtering
     //Filtering
     /******************************************************************************************/
@@ -469,7 +484,7 @@ else
     }
 
 
-    //Maybe refactor this?
+    //Maybe refactor this? GOes by order adding all the filters
     private List<Expense> GetFilteredExpenses(int pageNumber, int pageSize)
     {
         if (expenses == null)
@@ -503,16 +518,16 @@ else
         if (sortDescending)
         {
             filtered = filtered.OrderByDescending(e => e.Date);
-            totalExpenses = filtered.Sum(e => e.Amount);
+            totalExpenses = filtered.Sum(e => e.Amount);  // Gets sum of all filtered items 
         }
         else
         {
             filtered = filtered.OrderBy(e => e.Date);
-            totalExpenses = filtered.Sum(e => e.Amount);
+            totalExpenses = filtered.Sum(e => e.Amount); // Gets sum of all filtered items
         }
 
         // Paging
-        filtered = filtered.Skip((pageNumber - 1) * pageSize).Take(pageSize);
+        pagedExpenses = filtered.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
 
         return filtered.ToList();
     }
