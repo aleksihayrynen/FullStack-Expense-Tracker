@@ -40,15 +40,20 @@ body {
     right:3vh;
 }
 
+.total_boxes {
+    display: flex;
+    gap: 4vw;
+    margin-top: 30px;
+}
+
 .total-box {
     background-color: #f0f0f0;
-    margin-top:2rem;
-    width:20%;
+    margin-top: 2rem;
+    width: 20%;
     border-radius: 8px;
-    padding:1rem;
-    height:20%;
+    padding: 1rem;
+    height: 20%;
     padding-top: 0.5rem;
-
 }
 .total-box p {
     margin-bottom: 8px;
@@ -82,6 +87,11 @@ body {
 .search_button-container button {
     margin-left: 8px;
 }
+
+.amount_td {
+    max-width: 50px;
+}
+
 
 
 

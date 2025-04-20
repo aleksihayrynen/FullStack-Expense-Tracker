@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\js\\ExpenseSideChart.js"
     },
     {
+      "Id": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\js\\SummaryChart.js",
+      "PackagePath": "staticwebassets\\js\\SummaryChart.js"
+    },
+    {
       "Id": "C:\\Users\\aleks\\Documents\\Ohjelmointi\\FullStack-Joni\\FullStack-Expense-Tracker\\ExpenseTracker\\ExpenseTracker\\wwwroot\\js\\highcharts.js",
       "PackagePath": "staticwebassets\\js\\highcharts.js"
     },

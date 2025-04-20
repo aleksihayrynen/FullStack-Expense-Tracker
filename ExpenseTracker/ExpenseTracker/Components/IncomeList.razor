@@ -135,7 +135,7 @@ else
                         <tr>
                             <td>@income.Title</td>
                             <td>@income.Description</td>
-                            <td>@($"{income.Amount}{income.Currency}")</td>
+                            <td class="amount_td text-success">@($"{income.Amount}{income.Currency}")</td>
                             <td>@UtilityFunctions.CapitalizeFirstLetter(income.Category)</td>
                             <td>@income.Date.ToLocalTime().ToString("dd/MM/yyyy")</td>
                             <td>
@@ -185,7 +185,6 @@ else
     private string searchTitle = "";
     private string searchDescription = "";
     private string searchCategory = "";
-    private bool sortDescending = true;
     private bool sortByAmount = false;
     private bool searchActive = false;
     private string selectedSort = "DateAsc"; // "DateAsc", "DateDesc", "AmountAsc", "AmountDesc"
@@ -388,7 +387,6 @@ else
         searchTitle = "";
         searchDescription = "";
         searchCategory = "";
-        sortDescending = true;
         selectedFilter = "SelectedDates";
         searchActive = false;
 

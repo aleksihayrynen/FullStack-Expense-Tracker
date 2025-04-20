@@ -11,7 +11,7 @@ public class Unauthenticated : ActionFilterAttribute
 {
     public override void OnActionExecuting(ActionExecutingContext context)
     {
-        if (context.HttpContext.User.Identity.IsAuthenticated) 
+        if (context.HttpContext.User.Identity != null && context.HttpContext.User.Identity.IsAuthenticated ) 
         {
             context.Result = new RedirectToActionResult("Index", "Home", null);
         }

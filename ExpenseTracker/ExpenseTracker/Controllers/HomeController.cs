@@ -1,8 +1,8 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ExpenseTracker.Models;
-using ExpenseTracker.Models.Services;
-using ExpenseTracker.Helper;
+using ExpenseTracker.CustomActionFilters;
+
 
 namespace ExpenseTracker.Controllers;
 
@@ -17,7 +17,14 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        if (User.Identity != null && User.Identity.IsAuthenticated)
+        {
+           return RedirectToAction("Summary", "User");
+        }
+        else
+        {
+            return View();
+        }
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

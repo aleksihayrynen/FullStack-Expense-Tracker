@@ -1,0 +1,67 @@
+﻿@using ExpenseTracker.Components
+
+
+
+<div class="button_parent" style="position:relative;">
+    <div class="AddItem_div">
+        <button type="button" class="btn btn-success" id="showModalButton">
+            Add Item
+        </button>
+    </div>
+</div>
+
+
+<div id="modalContainer"></div>
+
+<component type="typeof(SummaryList)" render-mode="Server" />
+
+
+
+
+@section Scripts {
+    <script src="~/js/SummaryChart.js"></script>
+    <script src="~/js/highcharts.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            function loadModal() {
+
+            $.get('@Url.Action("AddItemPartial", "User")', function (response) {
+                $('#modalContainer').html(response);
+                $('#addItemModal').modal('show');
+            });
+        }
+
+            // Load modal on button click
+            $('#showModalButton').click(loadModal);
+            
+
+            // Delegate the form submission to dynamically loaded content
+            $('#modalContainer').on('submit', '#addItemForm', function (e) {
+                e.preventDefault();
+                var form = $(this);
+
+                $.ajax({
+                    url: '@Url.Action("AddItem", "User")',
+                    type: 'POST',
+                    data: form.serialize(),
+                    success: function (response) {
+                    if (response.success) {
+                        $('#addItemModal').modal('hide');
+                        location.reload();
+                    } else {
+                        // Clean up old modal + backdrop
+                        $('.modal-backdrop').remove();
+                        $('#addItemModal').modal('hide');
+                        $('#addItemModal').remove();
+
+                        // Inject updated modal with errors
+                        $('#modalContainer').html(response);
+                        $('#addItemModal').modal('show');
+                    }
+                }
+                });
+            });
+        });
+    </script>
+}

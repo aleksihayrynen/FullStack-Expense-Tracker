@@ -21,7 +21,7 @@
             type: 'bar'
         },
         title: {
-            text: 'Top 5 Categories by Spending'
+            text: 'Most common'
         },
         xAxis: {
             categories: categories,

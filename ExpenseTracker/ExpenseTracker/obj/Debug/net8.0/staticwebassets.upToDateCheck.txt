@@ -4,6 +4,7 @@ wwwroot\js\ExpenseChart.js
 wwwroot\js\ExpenseSideChart.js
 wwwroot\js\highcharts.js
 wwwroot\js\site.js
+wwwroot\js\SummaryChart.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
 wwwroot\lib\bootstrap\dist\css\bootstrap.min.css

@@ -23,6 +23,12 @@ namespace ExpenseTracker.Controllers
             return View();
         }
 
+        public IActionResult Summary()
+        {
+
+            return View();
+        }
+
         [HttpGet]
         public IActionResult AddItemPartial()
         {

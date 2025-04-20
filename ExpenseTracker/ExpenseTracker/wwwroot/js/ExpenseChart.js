@@ -29,7 +29,7 @@
             type: 'pie'
         },
         title: {
-            text: 'Expense Categories'
+            text: 'Categories'
         },
         plotOptions: {
             pie: {

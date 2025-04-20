@@ -28,6 +28,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xJbmNvbWVMaXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/aleks/Documents/Ohjelmointi/FullStack-Joni/FullStack-Expense-Tracker/ExpenseTracker/ExpenseTracker/Components/SummaryList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTdW1tYXJ5TGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/aleks/Documents/Ohjelmointi/FullStack-Joni/FullStack-Expense-Tracker/ExpenseTracker/ExpenseTracker/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -58,6 +62,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/aleks/Documents/Ohjelmointi/FullStack-Joni/FullStack-Expense-Tracker/ExpenseTracker/ExpenseTracker/Views/User/Income.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmNvbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/aleks/Documents/Ohjelmointi/FullStack-Joni/FullStack-Expense-Tracker/ExpenseTracker/ExpenseTracker/Views/User/Summary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxTdW1tYXJ5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/aleks/Documents/Ohjelmointi/FullStack-Joni/FullStack-Expense-Tracker/ExpenseTracker/ExpenseTracker/Views/User/_AddItemPartial.cshtml]
